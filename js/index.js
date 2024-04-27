@@ -54,7 +54,7 @@ var x = setInterval(function () {
     clearInterval(x);
     document.getElementById("count_down").innerHTML = "Time's Up";
     // Create a pop-up dialog
-    alert("Time is over!");
+    // alert("Time is over!");
 
     // If the user clicks "OK" (Restart), clear local storage
     localStorage.clear();
