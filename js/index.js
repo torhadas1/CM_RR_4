@@ -57,12 +57,12 @@ var x = setInterval(function () {
     // alert("Time is over!");
 
     // If the user clicks "OK" (Restart), clear local storage
-    localStorage.clear();
+    // localStorage.clear();
 
     // Here you might also want to reset any state in your app that depends on local storage
-    localStorage.setItem('isLoggedIn', 'true');
-    countDownDate = new Date().getTime() + 35 * 60 * 1000;
-    window.location.href = "index.html";
+    // localStorage.setItem('isLoggedIn', 'true');
+    // countDownDate = new Date().getTime() + 35 * 60 * 1000;
+    // window.location.href = "index.html";
     // And you could potentially restart the countdown or redirect the user
     // Reload the page
 
