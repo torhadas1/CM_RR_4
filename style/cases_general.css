@@ -22,7 +22,8 @@
 .timer {
     text-align: center;
     margin: 5px;
-    padding-bottom: 35px;
+    min-height: 30px;
+    /* padding-bottom: 35px; */
 }
 
 
@@ -121,4 +122,14 @@
 #inside_confirm_p {
     text-align: center;
     font-weight: 200;
+}
+/*right screen scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: var(--inner);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--capiton);
+  height: 20px;
 }

@@ -6,7 +6,9 @@ localStorage.removeItem('countDownDate')
 localStorage.removeItem('count_down')
 localStorage.removeItem('isLoggedIn')
 localStorage.removeItem('calculator_state')
-
+localStorage.removeItem('calculatorHistory')
+localStorage.removeItem('calculator_tutorial_shown')
+localStorage.removeItem('case1_tutorial_shown')
 
 
 // Create an array for all items in local storage
@@ -103,3 +105,4 @@ document.getElementById("downloadCSV").addEventListener("click", function () {
 });
 
 localStorage.clear();
+localStorage.setItem('isLoggedIn', true);

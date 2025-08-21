@@ -301,9 +301,10 @@ td:nth-child {
   opacity: 0.5;
 }
 
+
 .calculator {
-  margin-left: 25px;
-  height: 380px;
+  /* margin-left: 5px; */
+  height: 450px;
   width: 250px;
   text-align: center;
   background-color: var(--just_black);
@@ -364,11 +365,120 @@ label {
   font-weight: 500;
 }
 
-#count_down {
-  position: absolute;
-  left: 40%;
+
+
+#result {
+  width: fit-content;
 }
 
 #inputField {
+  background-color: var(--just_black);
+  padding: 10px;
   width: 100%;
+  border: solid 1px;
+}
+#tutorialPopupBox {
+  background: #333f50;
+  border: 3px solid #888;
+  border-radius: 18px;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.4);
+  padding: 40px 40px 32px 40px;
+  width: 77%;
+  height: 530px;
+  color: #fff;
+  text-align: left;
+  margin-left: 100px;
+  font-size: 1.18em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.tutorial-title {
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #333f50;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.tutorial-text {
+  margin-bottom: 36px;
+font-size: 24px;  color: #fff;
+    background-color: #333f50;
+
+}
+
+.tutorial-continue-btn {
+  font-size: 18px;
+  color: #222a35;
+  background: #d6dce5;
+  border: 2px solid #888;
+  border-radius: 8px;
+  padding: 4px 36px;
+  ;
+  font-weight: 500;
+  margin-top: 240px;
+  align-self: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.tutorial-continue-btn:hover {
+  background: #bfc7d1;
+}
+/* Style for the new history display area */
+.history-display {
+  background-color: black;
+  /* Dark background */
+  height: 120px;
+  /* Fixed height */
+  overflow-y: auto;
+  /* Make it scrollable */
+  border: 1px solid white;
+  /* border-radius: 5px; */
+  padding: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column-reverse;
+  /* Newest results at the bottom */
+}
+
+/* Style for each draggable item in the history */
+.history-item {
+  padding: 5px 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+  background-color: black;
+  /* Background for the whole line */
+  color: #222a35;
+    text-align: left;
+
+
+}
+/*right screen scrollbar */
+.history-display::-webkit-scrollbar {
+  width: 5px;
+  background-color: var(--inner);
+}
+
+.history-display::-webkit-scrollbar-thumb {
+  background-color: var(--capiton);
+  height: 20px;
+}
+
+.history-expression {
+  background-color: #000000;
+  text-align: left;
+}
+
+.history-result {
+  float: right;
+  padding: 3px;
+  background-color: white;
+  /* Slightly different background for emphasis */
 }

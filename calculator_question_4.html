@@ -55,7 +55,7 @@
                     <br>
                     <button onclick="isConfirm(false)" class="confirm_btn">Back to the question</button>
                     <button
-                        onclick="localStorage.setItem('calculator_state','review'); location.href='calculator_review.html';"
+                        onclick="localStorage.setItem('calculator_state','review'); location.href='calculator_review.html'; SaveToLocalStorage();"
                         class="confirm_btn">Move to
                         review</button>
                 </div>
@@ -79,12 +79,13 @@
                         <label for="first_answer_forest" style="display: inline;">Missing monkeys
                         </label>
                         <input type="text" style="display: inline;" class="input_answer" id="4. Question 4 Missing monkeys (percentage)"
-                            name="third_answer_forest" min="0"> %
+                            name="Missing monkeys to reach target on Rendang and Nangi Island (% of Y1 pop.)" min="0"> %
 
                     </div>
                 </div>
                 <div class="calculator">
                     <div class="display">
+                        <div id="historyDisplay" class="history-display"></div>
                         <input type="text" id="inputField">
                         <hr id="sep_line">
                         <div id="result" class="draggable" draggable="true">0</div>

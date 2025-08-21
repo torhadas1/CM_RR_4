@@ -39,7 +39,7 @@
 
 .main_screen {
   width: 60%;
-  margin-left: 50px;
+  margin-left: 60px;
   border-left: 15px solid rgb(226, 226, 255);
   border-top: 3px solid rgb(226, 226, 255);
   border-bottom: 3px solid rgb(226, 226, 255);
@@ -252,10 +252,7 @@ label {
   background-color: #000000;
 }
 
-#count_down {
-  position: absolute;
-  left: 40%;
-}
+
 
 .right_screen .draggable {
   margin: 10px;

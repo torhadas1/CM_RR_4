@@ -17,54 +17,7 @@ $(document).ready(function () {
   });
 
 
-  var countDownDate;
 
-  if (localStorage.getItem('countDownDate')) {
-    countDownDate = localStorage.getItem('countDownDate');
-  } else {
-    countDownDate = new Date().getTime() + 35 * 60 * 1000;
-  }
-
-  // Update the count down every 1 second
-  var x = setInterval(function () {
-
-    // Get today's date and time
-    var now = new Date().getTime();
-
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
-
-    // Time calculations for hours, minutes and seconds
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Pad the minutes and seconds with leading zeros if they are less than 10.
-    minutes = minutes.toString().padStart(2, '0');
-    seconds = seconds.toString().padStart(2, '0');
-    // Display the result in the element with id="count_down"
-    document.getElementById("count_down").innerHTML = minutes + ":" + seconds;
-
-    // If the count down is finished, write some text
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("count_down").innerHTML = "Time's Up";
-      // Create a pop-up dialog
-      // alert("Time is over!");
-
-      // If the user clicks "OK" (Restart), clear local storage
-      // localStorage.clear();
-
-      // Here you might also want to reset any state in your app that depends on local storage
-      // localStorage.setItem('isLoggedIn', 'true');
-      // countDownDate = new Date().getTime() + 35 * 60 * 1000;
-      // window.location.href = "index.html";
-      // And you could potentially restart the countdown or redirect the user
-      // Reload the page
-    } else {
-      // Store countdown date to localStorage
-      localStorage.setItem('countDownDate', countDownDate);
-    }
-  }, 1000);
 })
 
 // end analysis btn
@@ -101,7 +54,11 @@ $(document).ready(function () {
 
   $(document).on('keydown', function (e) {
     if (e.keyCode === 13) {  // 'Enter' key code
+      // prevent calculator btn from being triggered
+      $('.calculator-btn').prop('disabled', true);
+
       performCalculation("=");
+      $('.calculator-btn').prop('disabled', false);
     }
   });
 
@@ -114,6 +71,9 @@ $(document).ready(function () {
 function performCalculation(value) {
   if (value === "AC") { // Clear the input field when 'AC' is clicked
     $('#inputField').val('');
+    // Also clear the history display and its storage
+    // $('#historyDisplay').empty();
+    // localStorage.removeItem('calculatorHistory');
   } else if (value === "C") { // Remove the last character when 'C' is clicked
     $('#inputField').val($('#inputField').val().slice(0, -1));
   } else if (value === "=") { // Evaluate the expression when '=' is clicked
@@ -124,7 +84,7 @@ function performCalculation(value) {
         alert('Invalid Expression');
       } else {
         // format result
-        let formattedResult = parseFloat(result.toFixed(5)).toString();
+        let formattedResult = parseFloat(result.toFixed(2)).toString();
         if (formattedResult.indexOf('.') !== -1) {
           while (formattedResult[formattedResult.length - 1] === '0') {
             formattedResult = formattedResult.slice(0, -1);
@@ -134,8 +94,31 @@ function performCalculation(value) {
           }
         }
         $('#inputField').val(formattedResult);
-
         $('#result').text(formattedResult);
+
+        // --- Add to History ---
+        const historyText = expression + ' = ' + formattedResult;
+        const $historyItem = $('<div class="history-item"></div>');
+        const $expressionSpan = $('<span class="history-expression"></span>').text(expression + ' = ');
+        const $resultSpan = $('<span class="history-result draggable"></span>')
+          .text(formattedResult)
+          .attr('data-title', historyText); // Keep full context in data-title
+
+        // Make ONLY the result part draggable
+        $resultSpan.draggable({
+          helper: 'clone',
+          revert: 'invalid',
+          appendTo: 'body',
+          zIndex: 1100
+        });
+
+        // Append the non-draggable expression and the draggable result
+        $historyItem.append($expressionSpan).append($resultSpan);
+        $('#historyDisplay').prepend($historyItem);
+
+        // Save history to localStorage
+        localStorage.setItem('calculatorHistory', $('#historyDisplay').html());
+        // --- End of Add to History ---
       }
     } catch (error) {
       alert('Invalid Expression');
@@ -149,66 +132,50 @@ $(document).on('click', '.remove', function () {
   $(this).closest('div').remove();
 });
 
+
+
 $(function () {
   $(".input_answer, .report_answer").droppable({
-    accept: ".draggable, .sortable",
+    accept: ".draggable, .sortable, .history-result", // Add history-result
     drop: function (event, ui) {
-      let totalValue = ui.helper.text();
-      let dataTitle = ui.helper.attr('data-title');
-      let otherTitle = ui.helper.attr('title');
-      // get the value by replacing the data-title from totalValue
-      let value = totalValue.replace(dataTitle, '').replace('X', '').replace(/[^0-9.%-]/g, '').trim();
-      // Check if value contains %
-      if (value.includes("%")) {
-        // Replace % with an empty string, convert to number and divide by 100
-        value = Number(value.replace("%", "")) / 100;
+      let value;
+      
+      if (ui.helper.hasClass('history-result')) {
+        value = ui.helper.text(); // For history results, use text directly
+      } else {
+        let totalValue = ui.helper.text();
+        let dataTitle = ui.helper.attr('data-title');
+        value = totalValue.replace(dataTitle, '').replace('X', '').replace(/[^0-9.]/g, '').trim();
       }
+      
       $(this).val(value);
     }
   });
 })
+
 $(function () {
-  // Make the calculator's input field droppable
   $("#inputField").droppable({
-    accept: ".draggable",
+    accept: ".draggable, .history-result", // Add history-result
     drop: function (event, ui) {
-      let totalValue = ui.helper.text();
-      let dataTitle = ui.helper.attr('data-title');
-      let otherTitle = ui.helper.attr('title');
-      // get the value by replacing the data-title from totalValue
-      let value = totalValue.replace(dataTitle, '').replace('X', '').replace(/[^0-9.%-]/g, '').trim();
-
-      if (value === "AC") {
-        $(this).val('');
-      } else if (value === "C") {
-        $(this).val($(this).val().slice(0, -1));
-      } else if (value === "=") {
-        try {
-          const expression = $(this).val();
-          const result = eval(expression);
-          if (isNaN(result)) {
-            alert('Invalid Expression');
-          } else {
-            $(this).val(result);
-            $('#result').text(result);
-          }
-        } catch (error) {
-          alert('Invalid Expression');
-        }
+      let value;
+      
+      if (ui.helper.hasClass('history-result')) {
+        value = ui.helper.text(); // For history results, use text directly
       } else {
-        // Check if value contains %
-        if (value.includes("%")) {
-          // Replace % with an empty string, convert to number and divide by 100
-          value = Number(value.replace("%", "")) / 100;
-        }
-        const lastChar = $(this).val().slice(-1);
+        let totalValue = ui.helper.text();
+        let dataTitle = ui.helper.attr('data-title');
+        value = totalValue.replace(dataTitle, '').replace('X', '').replace(/[^0-9.%]/g, '').trim();
+      }
 
-        // If the last character is a math sign, append the value instead of replacing
-        if (lastChar === '+' || lastChar === '-' || lastChar === '*' || lastChar === '(' || lastChar === ')' || lastChar === '/') {
-          $(this).val($(this).val() + value);
-        } else {
-          $(this).val(value);
-        }
+      // ... rest of your existing calculator input logic ...
+      if (value.includes("%")) {
+        value = Number(value.replace("%", "")) / 100;
+      }
+      const lastChar = $(this).val().slice(-1);
+      if (lastChar === '+' || lastChar === '-' || lastChar === '*' || lastChar === '(' || lastChar === ')' || lastChar === '/') {
+        $(this).val($(this).val() + value);
+      } else {
+        $(this).val(value);
       }
     }
   });
@@ -226,3 +193,142 @@ $(function () {
 
   });
 })
+
+let timerInterval;
+let isPaused = false;
+let countDownDate;
+let pausedTimeRemaining = 0;
+
+$(document).ready(function () {
+  // Initialize timer and tutorial
+  initializeTimerAndTutorial();
+  
+  // Add event listener for tutorial continue button
+  $('#tutorialContinueBtn').on('click', function() {
+    closeTutorial();
+  });
+});
+
+function initializeTimerAndTutorial() {
+  if (!localStorage.getItem('case1_tutorial_shown')) {
+    showTutorial();
+  } else {
+    startTimer();
+  }
+}
+
+function startTimer() {
+  // Clear any existing timer
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+  
+  // Set the date we're counting down to
+  if (localStorage.getItem('countDownDate')) {
+    countDownDate = parseInt(localStorage.getItem('countDownDate'));
+  } else {
+    countDownDate = new Date().getTime() + 35 * 60 * 1000;
+  }
+
+  // Update the count down every 1 second
+  timerInterval = setInterval(function () {
+    if (isPaused) return; // Skip if paused
+
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    minutes = minutes.toString().padStart(2, '0');
+    seconds = seconds.toString().padStart(2, '0');
+
+    if (document.getElementById("count_down")) {
+      document.getElementById("count_down").innerHTML = minutes + ":" + seconds;
+    }
+
+    if (distance < 0) {
+      clearInterval(timerInterval);
+      if (document.getElementById("count_down")) {
+        document.getElementById("count_down").innerHTML = "Time's Up";
+      }
+    } else {
+      localStorage.setItem('countDownDate', countDownDate);
+    }
+  }, 1000);
+}
+
+function showTutorial() {
+  // Show tutorial popup
+  const tutorialPopup = document.getElementById('tutorialPopup');
+  if (tutorialPopup) {
+    tutorialPopup.style.display = 'block';
+  }
+
+  // Actually pause the timer
+  isPaused = true;
+  
+  // Calculate and store remaining time from the EXISTING timer
+  if (countDownDate) {
+    var now = new Date().getTime();
+    pausedTimeRemaining = countDownDate - now;
+  } else if (localStorage.getItem('countDownDate')) {
+    // Use the existing timer from localStorage (from previous page)
+    countDownDate = parseInt(localStorage.getItem('countDownDate'));
+    var now = new Date().getTime();
+    pausedTimeRemaining = countDownDate - now;
+  } else {
+    // Only if no timer exists at all, start a new 35-minute timer
+    pausedTimeRemaining = 35 * 60 * 1000;
+  }
+  
+  // Show "Paused"
+  if (document.getElementById("count_down")) {
+    document.getElementById("count_down").innerHTML = "Paused";
+  }
+
+  // Disable interactions during tutorial
+  $('.calculator-btn').prop('disabled', true);
+  $('#inputField').prop('disabled', true);
+  $('.input_answer').prop('disabled', true);
+  $('.draggable').draggable('disable');
+}
+
+function closeTutorial() {
+  // Hide tutorial popup
+  const tutorialPopup = document.getElementById('tutorialPopup');
+  if (tutorialPopup) {
+    tutorialPopup.style.display = 'none';
+  }
+
+  // Resume timer with the remaining time (preserve the original timer)
+  isPaused = false;
+  
+  // Set countdown date to resume from where it was paused
+  countDownDate = new Date().getTime() + pausedTimeRemaining;
+  localStorage.setItem('countDownDate', countDownDate);
+
+  // Enable interactions
+  $('.calculator-btn').prop('disabled', false);
+  $('#inputField').prop('disabled', false);
+  $('.input_answer').prop('disabled', false);
+  $('.draggable').draggable('enable');
+  
+  // Mark tutorial as shown and start timer
+  localStorage.setItem('case1_tutorial_shown', 'true');
+  startTimer();
+}
+
+// --- Load Calculator History ---
+// const savedHistory = localStorage.getItem('calculatorHistory');
+// if (savedHistory) {
+//   $('#historyDisplay').html(savedHistory);
+//   // Re-initialize draggable functionality for loaded history items
+//   $('#historyDisplay .history-result').draggable({
+//     helper: 'clone',
+//     revert: 'invalid',
+//     appendTo: 'body',
+//     zIndex: 1100
+//   });
+// }
+// --- End of Load History ---

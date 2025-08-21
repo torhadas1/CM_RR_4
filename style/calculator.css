@@ -173,12 +173,12 @@
 }
 
 /*right screen scrollbar */
-.right_screen::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 12px;
   background-color: var(--inner);
 }
 
-.right_screen::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: var(--capiton);
   height: 20px;
 }
@@ -297,7 +297,7 @@
 
 
 .calculator {
-  height: 380px;
+  height: 450px;
   width: 250px;
   background-color: var(--just_black);
   border: 3px solid #ccc;
@@ -311,6 +311,10 @@
 
 #result {
   background-color: white;
+  color: var(--just_black);
+  border: 1px solid var(--just_black);
+  width: fit-content;
+
 }
 
 
@@ -400,15 +404,17 @@ label {
 .remove {
   position: absolute;
   top: -2px;
+  display: none;
   right: -20px;
   width: 0.1px;
   font-size: 0.1px;
 }
 
+/* 
 #count_down {
   position: absolute;
   left: 650px;
-}
+} */
 
 .smenu .btn_active {
   color: white;
@@ -457,7 +463,8 @@ label {
 .timer {
   text-align: center;
   margin: 5px;
-  padding-bottom: 20px;
+  margin-bottom: -10px;
+  min-height: 30px;
 }
 
 #clearStorage {
@@ -488,8 +495,166 @@ label {
   font-weight: 450;
 }
 
-#title {
-  background-color: #222a35;
-  text-align: left;
-  margin-left: 40px;
+/* Tutorial popup styles - positioned exactly over question text */
+.tutorial-popup {
+  position: absolute;
+  top: 20;
+  background-color: #333f50;
+  left: 20;
+  z-index: 1000;
+}
+
+/* Collapsible text in right_screen sortable/draggable */
+.right_screen .sortable,
+.right_screen .draggable {
+  position: relative;
+  /* padding-right: 32px; */
+  width: 90%;
+  /* Space for the arrow */
+  overflow: visible;
+  /* Ensure content doesn't clip */
+  /* two color background */
+  /* background: linear-gradient(to bottom,var(--inner) 29px,  var(--capiton) 29px); */
+
+}
+
+
+
+
+.expand-arrow.show {
+  display: flex;
+  /* Show if needed */
+}
+
+/* .expand-arrow.expanded {
+  transform: translateY(-50%) rotate(180deg);
+} */
+
+/* --- START: Collapsible Item CSS --- */
+
+/* The container for the text that will collapse */
+.right_screen .text-content {
+  max-height: 1.4em;
+  /* Limits to one line */
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 200px;
+
+  color: var(--just_black);
+  background-color: white;
+  text-overflow: ellipsis;
+  transition: max-height 0.25s ease-out;
+  cursor: pointer;
+}
+
+/* The state when the item is expanded */
+.right_screen .expanded .text-content {
+  max-height: 300px;
+  /* Or a large enough value */
+  white-space: normal;
+
+}
+
+/* The arrow button */
+.expand-arrow {
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+  width: 24px;
+  height: 1.1em;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  color: #333f50;
+  cursor: pointer;
+  z-index: 5;
+  display: none;
+  /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease-out;
+}
+
+/* The arrow when the item is expanded */
+.expand-arrow.expanded {
+  transform: rotate(180deg);
+}
+
+/* --- END: Collapsible Item CSS --- */
+
+/* Style for the new history display area */
+.history-display {
+  background-color: black;
+  /* Dark background */
+  height: 120px;
+  /* Fixed height */
+  overflow-y: auto;
+  /* Make it scrollable */
+  border: 1px solid white;
+  /* border-radius: 5px; */
+  padding: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column-reverse;
+  /* Newest results at the bottom */
+}
+
+/* Style for each draggable item in the history */
+.history-item {
+  padding: 5px 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+  background-color: black;
+  /* Background for the whole line */
+  color: #222a35;
+
+}
+
+/*right screen scrollbar */
+.history-display::-webkit-scrollbar {
+  width: 5px;
+  background-color: var(--inner);
+}
+
+.history-display::-webkit-scrollbar-thumb {
+  background-color: var(--capiton);
+  height: 5px;
+}
+
+/*history display scrollbar if horizontal */
+/*right screen scrollbar */
+.history-display::-webkit-scrollbar:horizontal {
+  width: 5px;
+  height: 10px;
+  background-color: var(--inner);
+}
+
+.history-display::-webkit-scrollbar-thumb:horizontal {
+  background-color: var(--capiton);
+  height: 5px;
+}
+
+
+.history-expression {
+  background-color: #000000;
+}
+
+.history-result {
+  float: right;
+  padding: 3px;
+  background-color: white;
+  /* Slightly different background for emphasis */
+}
+
+.history-result.ui-droppable-processed.ui-droppable.sortable.ui-sortable.ui-sortable-disabled{
+  display: none;
+}
+/* history-result ui-droppable-processed ui-droppable sortable ui-sortable ui-sortable-disabled */
+.right_screen .history-result {
+  padding: 0px;
+  /* Slightly different background for emphasis */
 }

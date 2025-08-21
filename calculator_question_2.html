@@ -55,7 +55,7 @@
                     <br>
                     <button onclick="isConfirm(false)" class="confirm_btn">Back to the question</button>
                     <button
-                        onclick="localStorage.setItem('calculator_state','3'); location.href='calculator_question_3.html';"
+                        onclick="localStorage.setItem('calculator_state','3'); location.href='calculator_question_3.html'; moveToNextQuestion();"
                         class="confirm_btn">Move to
                         Question 3</button>
                 </div>
@@ -78,16 +78,17 @@
                     <div class="input_box">
                         <label for="first_answer_forest">Rendang Island</label>
                         <input type="text" class="input_answer" id="2. Question 2 Rendang Island"
-                            name="first_answer_forest" min="0">
+                            name="Disease impact on # of Kapulici Monkeys on Rendang Island in Y5" min="0">
                         <br>
                         <label for="first_answer_lagoon">Nangi Island</label>
-                        <input type="text" class="input_answer" name="first_answer_lagoon"
+                        <input type="text" class="input_answer" name="Disease impact on # of Kapulici Monkeys on Nangi Island in Y5"
                             id="2. Question 2 Nangi Island" min="0">
                     </div>
 
                 </div>
                 <div class="calculator">
                     <div class="display">
+                        <div id="historyDisplay" class="history-display"></div>
                         <input type="text" id="inputField">
                         <hr id="sep_line">
                         <div id="result" class="draggable" draggable="true">0</div>

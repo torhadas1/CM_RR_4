@@ -56,7 +56,7 @@
                     <br>
                     <button onclick="isConfirm(false)" class="confirm_btn">Back to the question</button>
                     <button
-                        onclick="localStorage.setItem('calculator_state','2'); location.href='calculator_question_2.html';"
+                        onclick="localStorage.setItem('calculator_state','2'); location.href='calculator_question_2.html'; moveToNextQuestion();"
                         class="confirm_btn">Move to
                         Question 2</button>
                 </div>
@@ -64,6 +64,30 @@
         </div>
         <div class="main_screen column">
             <div class="container_main_screen">
+                <div class="tutorial-popup" id="tutorialPopup" style="display: none;">
+                    <div class="question_text"
+                        style="border: 3px solid #888; background: #333f50; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.3); font-weight: 450;">
+                        <div class="question_title " style="background: #333f50; font-weight: 600;">Tutorial</div>
+                        <br>
+                        Please get ready for the next<br>
+                        stage of the assessment.<br><br>
+                        You will have to answer a few<br>
+                        questions related to your<br>
+                        research.
+                        <br><br>
+                        <button onclick=closeTutorial() style=" 
+                                font-size: 16px;
+                                color: var(--just_black);
+                                padding: 4px 24px;
+                                font-weight: 500;
+                                border-radius: 10px;
+                                border-color: rgb(179, 187, 255);
+                                border-width: 3px;
+                                cursor: pointer;
+                                background-color: #d6dce5; float: right;">
+                            Continue</button>
+                    </div>
+                </div>
                 <div class="question_text">
                     <div class="question_title">Question 1</div>
                     <br>
@@ -78,15 +102,16 @@
                     <div class="input_box">
                         <label for="first_answer_forest">Rendang Island</label>
                         <input type="text" class="input_answer" id="1. Question 1 Rendang Island"
-                            name="first_answer_forest" min="0">
+                            name="# of Kapulici Monkeys in Y5 on Rendang Island" min="0">
                         <br>
                         <label for="first_answer_lagoon">Nangi Island</label>
-                        <input type="text" class="input_answer" name="1. Question 1 Nangi Island"
+                        <input type="text" class="input_answer" name="# of Kapulici Monkeys in Y5 on Nangi Island"
                             id="1. Question 1 Nangi Island" min="0">
                     </div>
                 </div>
                 <div class="calculator">
                     <div class="display">
+                        <div id="historyDisplay" class="history-display"></div>
                         <input type="text" id="inputField">
                         <hr id="sep_line">
                         <div id="result" class="draggable" draggable="true"> 0 </div>

@@ -118,47 +118,51 @@ $(function () {
     accept: ".draggable",
     tolerance: "pointer",
     drop: function (event, ui) {
+      let newElem;
       if (ui.draggable.hasClass('draggable')) {
-
-        var newElem = $(ui.helper).clone(false);
+        newElem = $(ui.helper).clone(false);
         newElem.removeClass('ui-draggable ui-draggable-handle ui-draggable-dragging').css({ 'position': 'relative', 'left': '', 'top': '' });
-        newElem.removeClass('draggable');
-        newElem.removeClass('dragging');
+        newElem.removeClass('draggable dragging');
+        newElem.addClass('sortable');
 
-        var title = ui.helper.data('title');
-        newElem.addClass('sortable')
-        // Add a title to the new element
-        newElem.prepend("<div class='title' contenteditable='true'>" + title + "</div>");
-        // Add a horizontal line after the new element
-        newElem.append("<button class='remove'>X</button>");
+        const title = ui.helper.data('title');
+        const originalText = newElem.text().trim(); // Get the text content
+
+        // Clear the element and rebuild it correctly
+        newElem.empty()
+          .append("<div class='title' contenteditable='true'>" + title + "</div>")
+          .append("<div class='text-content'>" + originalText + "</div>") // Wrap text
+          .append("<button class='remove'>X</button>");
+
         newElem.appendTo(this);
-        // $("<hr>").appendTo(this);
-        $(this).sortable({ cancel: '.title' }).removeClass('ui-draggable ui-draggable-handle ui-sortable-handle');
       }
+      // This part handles re-sorting existing items, it's likely fine
       else if (ui.draggable.hasClass('sortable')) {
-        var newElem = $(ui.draggable);
+        newElem = $(ui.draggable);
         newElem.removeClass('ui-draggable ui-draggable-handle ui-sortable-handle').css({ 'position': 'relative', 'left': '', 'top': '' });
-        newElem.next('hr').remove();
-        newElem.removeClass('dragging');
-
-        // newElem.appendTo(this);
         newElem.appendTo(this);
       }
-      // Make the 'right_screen' container sortable
+
+      // After adding, make sure it's expandable
+      if (newElem) {
+        setupExpandableItems(newElem);
+      }
+
+      // Make the container sortable
+      $(this).sortable({ cancel: '.title' });
     }
-    // Make the 'right_screen' container sortable
   }// log the dropped element 
   );
 
   $(document).on('click', '.remove', function () {
     // Get the ID of the parent div
-    var elementId = $(this).parent().attr('id');
+    var elementId = $(this).parent().parent().attr('id');
 
     // Change the class of the corresponding element in the main column back to 'draggable'
     $('#' + elementId).removeClass('afterDrag ui-draggable-disabled').addClass('draggable');
     $('#' + elementId).draggable('enable');
     $(this).parent().next('hr').remove();
-    $(this).closest('div').remove();
+    $(this).parent().parent().remove();
 
   });
 
@@ -173,6 +177,17 @@ $('#journal_container').sortable({
 
 
 
+$(document).on('keydown', function (e) {
+  if (e.keyCode === 13) {  // 'Enter' key code
+    // prevent calculator btn from being triggered
+    // if journal title is focused, do not perform calculation
+    if ($('.title:focus').length > 0) {
+      // stop the focus
+      $('.title:focus').blur();
+      return;
+    }
+  }
+});
 
 
 $("#sort1,#sort2").disableSelection();
@@ -283,3 +298,76 @@ function PressAnalysisButtonToLocalStorage() {
   } else {
   }
 }
+
+// --- START: EXPAND/COLLAPSE LOGIC ---
+
+/**
+ * Sets up the structure and expand/collapse functionality for items.
+ * @param {jQuery} [$items] - Optional. A specific item or items to set up.
+ */
+function setupExpandableItems($items) {
+  const itemsToSetup = $items || $('.right_screen .sortable');
+
+  itemsToSetup.each(function () {
+    const $box = $(this);
+
+    // --- 1. Ensure correct HTML structure ---
+    // If the title is not in a title-bar, restructure it.
+    if ($box.find('.title-bar').length === 0) {
+      const $title = $box.find('.title');
+      const $removeBtn = $box.find('.remove');
+      const $titleBar = $('<div class="title-bar"></div>');
+      $titleBar.append($title).append($removeBtn);
+      $box.prepend($titleBar);
+    }
+
+    // If text is not wrapped in .text-content, wrap it.
+    if ($box.find('.text-content').length === 0) {
+      const originalText = $box.clone().children('.title-bar, .remove, .expand-arrow').remove().end().text().trim();
+      $box.children().not('.title-bar, .remove, .expand-arrow').remove();
+      const $textContent = $("<div class='text-content'></div>").text(originalText);
+      $box.append($textContent);
+    }
+
+    // --- 2. Add expand arrow if needed ---
+    const $text = $box.find('.text-content');
+    // save the current expand arrow state
+    const isExpanded = $box.hasClass('expanded');
+
+    $box.find('.expand-arrow').remove(); // Prevent duplicates
+
+    if ($text.text().trim().length > 25) {
+      if (isExpanded) {
+        // Add expand arrow only if not already expanded
+        const $arrow = $('<button type="button" class="expand-arrow expanded">&#x25BC;</button>');
+        $box.append($arrow);
+        $arrow.css('display', 'flex'); // Use flex to align icon
+      } else {
+        const $arrow = $('<button type="button" class="expand-arrow">&#x25BC;</button>');
+        $box.append($arrow);
+        $arrow.css('display', 'flex'); // Use flex to align icon
+      }
+    }
+  });
+}
+
+$(document).ready(function () {
+  // --- Event Handlers using Delegation ---
+  $('.right_screen').on('click', '.expand-arrow, .text-content', function (e) {
+    e.stopPropagation();
+    const $box = $(this).closest('.sortable, .draggable');
+    if ($box.find('.expand-arrow').length > 0) {
+      $box.toggleClass('expanded');
+      $box.find('.expand-arrow').toggleClass('expanded');
+    }
+  });
+
+  // --- Initial Setup ---
+  // Run for all items already on the page (e.g., from localStorage)
+  setupExpandableItems();
+
+  // IMPORTANT: You must call setupExpandableItems() after you
+  // dynamically add a new item to the right screen.
+});
+
+// --- END: EXPAND/COLLAPSE LOGIC ---

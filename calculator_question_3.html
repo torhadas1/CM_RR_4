@@ -55,7 +55,7 @@
                     <br>
                     <button onclick="isConfirm(false)" class="confirm_btn">Back to the question</button>
                     <button
-                        onclick="localStorage.setItem('calculator_state','4'); location.href='calculator_question_4.html';"
+                        onclick="localStorage.setItem('calculator_state','4'); location.href='calculator_question_4.html'; moveToNextQuestion();"
                         class="confirm_btn">Move to
                         Question 4</button>
                 </div>
@@ -78,13 +78,14 @@
                     <div class="input_box">
                         <label for="first_answer_forest" style="display: inline;">Total decrease</label>
                         <input type="text" class="input_answer" id="3. Question 3 Total percentage decrease"
-                            name="first_answer_forest" min="0" style="display: inline;"> <div style="display: inline;"> %</div>
+                            name="% decrease in Kapulici Monkeys across both Rendang and Nangi in Y5" min="0" style="display: inline;"> <div style="display: inline;"> %</div>
 
                     </div>
 
                 </div>
                 <div class="calculator">
                     <div class="display">
+                        <div id="historyDisplay" class="history-display"></div>
                         <input type="text" id="inputField">
                         <hr id="sep_line">
                         <div id="result" class="draggable" draggable="true">0</div>

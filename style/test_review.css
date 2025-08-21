@@ -39,8 +39,8 @@
 }
 
 .main_screen {
-  width: 85%;
-  margin-left: 50px;
+  width: 84%;
+  margin-left: 60px;
   border-left: 10px solid var(--capiton);
   border-top: 3px solid var(--capiton);
   border-bottom: 3px solid var(--capiton);

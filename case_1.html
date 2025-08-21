@@ -94,6 +94,7 @@
         <div class="container">
             <div class="calculator">
                 <div class="display">
+                    <div id="historyDisplay" class="history-display"></div>
                     <input type="text" id="inputField">
                     <div id="result" class="draggable" draggable="true">0</div>
                     <hr id="sep_line">
@@ -126,5 +127,24 @@
         <script src="./js/cases.js"></script>
 
 </body>
+ <div id="tutorialPopup" style="
+  display:none;
+  position:absolute;
+  top:50px; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+">
+        <div id="tutorialPopupBox">
+            <div class="tutorial-title">Tutorial</div>
+            <div class="tutorial-text">
+                Please get ready for the next stage of the assessment.<br><br>
+                You will have to answer a few cases to complete your research.
+            </div>
+            <button id="tutorialContinueBtn" class="tutorial-continue-btn">Continue</button>
+        </div>
+    </div>
 
 </html>

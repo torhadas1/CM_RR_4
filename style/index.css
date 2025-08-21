@@ -731,3 +731,92 @@
     height: 1px;
     font-size: 1px;
 }
+
+/* Collapsible text in right_screen sortable/draggable */
+.right_screen .sortable,
+.right_screen .draggable {
+    position: relative;
+    /* padding-right: 32px; */
+    width: 90%;
+    /* Space for the arrow */
+    overflow: visible;
+    /* Ensure content doesn't clip */
+    /* two color background */
+    /* background: linear-gradient(to bottom,var(--inner) 29px,  var(--capiton) 29px); */
+
+}
+
+
+
+.expand-arrow.show {
+    display: flex;
+    /* Show if needed */
+}
+
+.expand-arrow.expanded {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* --- START: Collapsible Item CSS --- */
+
+/* The container for the text that will collapse */
+.right_screen .text-content {
+    max-height: 1.4em;
+    /* Limits to one line */
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 200px;
+
+    color: var(--just_black);
+    background-color: white;
+    text-overflow: ellipsis;
+    transition: max-height 0.25s ease-out;
+    cursor: pointer;
+}
+
+/* The state when the item is expanded */
+.right_screen .expanded .text-content {
+    max-height: 300px;
+    /* Or a large enough value */
+    white-space: normal;
+
+}
+
+/* The arrow button */
+.expand-arrow {
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    width: 24px;
+    height: 1.1em;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    color: #333f50;
+    cursor: pointer;
+    z-index: 5;
+    display: none;
+    /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease-out;
+}
+
+/* The arrow when the item is expanded */
+.expand-arrow.expanded {
+    transform: rotate(180deg);
+}
+
+/* --- END: Collapsible Item CSS --- */
+/*right screen scrollbar */
+
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: var(--inner);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--capiton);
+  height: 20px;
+}
