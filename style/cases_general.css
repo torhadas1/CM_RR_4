@@ -128,8 +128,36 @@
   width: 12px;
   background-color: var(--inner);
 }
+/*right screen scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: var(--inner);
+}
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--capiton);
   height: 20px;
+}
+/*right screen scrollbar */
+.history-display::-webkit-scrollbar {
+  width: 5px;
+  background-color: var(--inner);
+}
+
+.history-display::-webkit-scrollbar-thumb {
+  background-color: var(--capiton);
+  height: 5px;
+}
+
+/*history display scrollbar if horizontal */
+/*right screen scrollbar */
+.history-display::-webkit-scrollbar:horizontal {
+  width: 5px;
+  height: 10px;
+  background-color: var(--inner);
+}
+
+.history-display::-webkit-scrollbar-thumb:horizontal {
+  background-color: var(--capiton);
+  height: 5px;
 }

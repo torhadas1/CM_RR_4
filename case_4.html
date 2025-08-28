@@ -56,34 +56,36 @@
                 <p id="the_question">Which information is true based on the data provided? You can select multiple
                     options.
                 </p><br>
-                <radio >
+                <radio>
                     <label for="Case 4 a">
                         <input type="radio" id="Case 4 a" name="case_3_radio" value="If the number of Grey Squirrels is above average in a given area, the number of Spotted Deer in that 
-                        area is below average" > If the number of Grey Squirrels is above average in a given area, the
+                        area is below average"> If the number of Grey Squirrels is above average in a given area, the
                         number of Spotted Deer in that
                         area is below average<br style="line-height: 15px;">
-                    </label>    
+                    </label>
 
                     <label for="Case_4_b" style="margin-bottom: 20px;"> <input type="radio" id="Case 4 b"
                             name="case_3_radio"
-                            value="There are more Spotted Deer predators present in Manggis Island than in Nangi Island" style="margin-bottom: 10px;">
+                            value="There are more Spotted Deer predators present in Manggis Island than in Nangi Island"
+                            style="margin-bottom: 10px;">
                         There are more Spotted Deer predators present in Manggis Island than in Nangi Island<br></label>
 
-                    <label for="Case_4_c" style="margin-bottom: 10px;"><input type="radio" id="Case 4 c" name="case_3_radio"
-                            value="If the number of Grey Squirrels in an area is below average, the number of Swift Parrots is below 
-                            average" style="margin-bottom: 10px;"> If the number of Grey Squirrels in an area is below average, the number of Swift
+                    <label for="Case_4_c" style="margin-bottom: 10px;"><input type="radio" id="Case 4 c"
+                            name="case_3_radio" value="If the number of Grey Squirrels in an area is below average, the number of Swift Parrots is below 
+                            average" style="margin-bottom: 10px;"> If the number of Grey Squirrels in an area is below
+                        average, the number of Swift
                         Parrots is below
                         average<br></label>
 
-                    <label for="Case_4_d" style="margin-bottom: 10px;"><input type="radio" id="Case 4 d" name="case_3_radio"
-                            value="None of the above" style="margin-bottom: 10px;"> None of the above</label><br>
+                    <label for="Case_4_d" style="margin-bottom: 10px;"><input type="radio" id="Case 4 d"
+                            name="case_3_radio" value="None of the above" style="margin-bottom: 10px;"> None of the
+                        above</label><br>
                 </radio>
-               
-                <div><button class="end_btn" onclick="showConfirmBox()">Next Case</button></div>
+
             </div>
             <div class="container_main_screen">
                 <div class="overlay" id="overlay" hidden>
-                    <div class="confirm-box" style="top: 100%;">
+                    <div class="confirm-box" style="top: 50%;">
                         <h2 id="forward">Do you want to move to the next question?</h2><br>
                         <p id="inside_confirm_p">You won’t be able to change your answer</p>
                         <br>
@@ -92,6 +94,8 @@
                     </div>
                 </div>
             </div>
+            <div><button class="end_btn" onclick="showConfirmBox()">Next Case</button></div>
+
         </div>
     </div>
     <script src="./js/calculator.js"></script>

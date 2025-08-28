@@ -38,12 +38,12 @@
 }
 
 .main_screen {
-  width: 84%;
+  width: 85%;
   margin-left: 60px;
-  border-left: 10px solid var(--capiton);
-  border-top: 3px solid var(--capiton);
-  border-bottom: 3px solid var(--capiton);
-  border-right: 10px solid var(--capiton);
+  border-left: 15px solid rgb(226, 226, 255);
+  border-top: 3px solid rgb(226, 226, 255);
+  border-bottom: 3px solid rgb(226, 226, 255);
+  border-right: 15px solid rgb(226, 226, 255);
   background-color: var(--inner);
   overflow-y: auto;
 }
