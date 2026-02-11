@@ -179,17 +179,17 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Y1', 'Y2','Y3', 'Y4', 'Y5'],
+        labels: ['Before winter', 'After winter', 'End of Year 1'],
         datasets: [{
-            label: 'Rendang Island',
-            data: [356, 355, 312,261,0],  // Default values
+            label: 'Adding deer during winter',
+            data: [0, 0, 0],  // Default values
             backgroundColor: 'rgba(255, 99, 132, 0.6)',
             borderColor: 'rgba(255,99,132,1)',
             borderWidth: 1
         },
         {
-            label: 'Nangi Island',
-            data: [215, 199,191,173,0],  // Default values
+            label: 'Adding deer in spring',
+            data: [0, 0, 0],  // Default values
             backgroundColor: 'rgba(54, 162, 235, 0.6)',
             borderColor: 'rgba(54, 162, 235, 1)',
             borderWidth: 1
@@ -208,7 +208,7 @@ var myChart = new Chart(ctx, {
         legend: {
             position: 'right',  // moves the legend to the right
             labels: {
-                fontSize: 20  // change this to whatever size you want
+                fontSize: 16  // change this to whatever size you want
             }
         }
     }
@@ -219,28 +219,26 @@ $(document).on('click', '.remove', function () {
 });
 
 function updateChart() {
-    // var value1 = document.getElementById('6. Graph - Revok Forest Worst-case').value || 356;
-    // var value2 = document.getElementById('6. Graph - Langker Pasture Worst-case').value || 215;
-    // var value3 = document.getElementById('6. Graph - Revok Forest Standard').value || 355;
-    // var value4 = document.getElementById('6. Graph - Langker Pasture Standard').value || 199;
-    // var value5 = document.getElementById('6. Graph - Revok Forest Worst-case').value || 312;
-    // var value6 = document.getElementById('6. Graph - Langker Pasture Worst-case').value || 191;
-    // var value7 = document.getElementById('6. Graph - Revok Forest Standard').value || 261;
-    // var value8 = document.getElementById('6. Graph - Langker Pasture Standard').value || 173;
-    var value1 = document.getElementById('7. Graph - Rendang Island Y5').value || 0;
-    var value2 = document.getElementById('7. Graph - Nangi Island Y5').value || 0;
+    var winterBefore = document.getElementById('7. Graph - Winter - Before').value || 0;
+    var winterAfter = document.getElementById('7. Graph - Winter - After').value || 0;
+    var winterEnd = document.getElementById('7. Graph - Winter - End').value || 0;
+    var springBefore = document.getElementById('7. Graph - Spring - Before').value || 0;
+    var springAfter = document.getElementById('7. Graph - Spring - After').value || 0;
+    var springEnd = document.getElementById('7. Graph - Spring - End').value || 0;
 
-    myChart.data.datasets[0].data = [356, 355, 312, 261, value1];
-    myChart.data.datasets[1].data = [215, 199,191,173,value2];
+    myChart.data.datasets[0].data = [winterBefore, winterAfter, winterEnd];
+    myChart.data.datasets[1].data = [springBefore, springAfter, springEnd];
     myChart.update();
 }
 
 
 // Add input event listeners to all input fields
-document.getElementById('7. Graph - Rendang Island Y5').addEventListener('input', updateChart);
-document.getElementById('7. Graph - Nangi Island Y5').addEventListener('input', updateChart);
-// document.getElementById('6. Graph - Revok Forest Standard').addEventListener('input', updateChart);
-// document.getElementById('6. Graph - Langker Pasture Standard').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Winter - Before').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Winter - After').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Winter - End').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Spring - Before').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Spring - After').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Spring - End').addEventListener('input', updateChart);
 
 document.getElementById('clearStorage').addEventListener('click', function () {
     // Temporarily store isLoggedIn

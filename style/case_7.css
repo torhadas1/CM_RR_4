@@ -482,3 +482,63 @@ font-size: 24px;  color: #fff;
   background-color: white;
   /* Slightly different background for emphasis */
 }
+
+/* Table Styling for Exhibits */
+.exhibit-table {
+    border-collapse: collapse;
+    width: 90%;
+    background-color: var(--inner) !important;
+    margin-top: 10px;
+}
+
+.exhibit-table th {
+    background-color: var(--inner) !important;
+    color: var(--capiton);
+    border: 1px solid #dddddd;
+    border-bottom: 3px solid #dddddd; ;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.exhibit-table td {
+    padding: 3px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #dddddd;
+    color: var(--capiton);
+}
+
+.exhibit-table tbody tr:nth-child(odd) {
+    background-color: #333f50 !important;
+}
+
+.exhibit-table tbody tr:nth-child(even) {
+    background-color: #8497b0 !important;
+}
+
+.exhibit-table tbody tr:nth-child(odd) td {
+    background-color: #333f50 !important;
+}
+
+.exhibit-table tbody tr:nth-child(even) td {
+    background-color: #8497b0 !important;
+}
+
+.exhibit-table td.draggable,
+.exhibit-table td .draggable {
+    background-color: var(--capiton);
+    color: var(--just_black);
+    border: 2px dashed var(--just_black);
+    padding: 5px 10px;
+    display: inline-block;
+    cursor: move;
+    font-weight: bold;
+}
+
+
+/* Make first column bold */
+.exhibit-table td:first-child {
+    font-weight: bold;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Cases | Case 6</title>
+    <link rel="stylesheet" href="./style/case_7.css">
+    <link rel="stylesheet" href="./style/cases_general.css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body class="body">
+    <div class="timer">
+        <p id="count_down"></p>
+    </div>
+    <div id="row">
+        <div class="left column">
+            <!--build the menu and the submenus-->
+            <div class="menu">
+                <ul>
+                    <li class="item" id="invest">
+                        <a href="#" class="btn_active">Case Questions</a>
+                        <div class="smenu">
+                            <a href="#" class="target">Case 1</a>
+                            <a href="#" class="target">Case 2</a>
+                            <a href="#" class="target">Case 3</a>
+                            <a href="#" class="target">Case 4</a>
+                            <a href="#" class="target">Case 5</a>
+                            <a href="#" class="btn_active">Case 6</a>
+
+                        </div>
+                    </li>
+                </ul>
+                <button id="clearStorage">Restart</button>
+
+            </div>
+        </div>
+        <!--main screen column-->
+        <div class="main_screen column">
+            <div class="question_container">
+                <h1> Your NGO has compiled information regarding the population of
+                    different <br> types of racoons that live in the Ferrenghi Chain during Year
+                    1 to Year 5:</h1>
+                <br>
+                <table>
+                    <tr>
+                        <th style="width: 175px;"> Type (Population)</th>
+                        <th>Y1</th>
+                        <th>Y2</th>
+                        <th>Y3</th>
+                        <th>Y4</th>
+                        <th>Y5</th>
+                    </tr>
+                    <tr>
+                        <td style="width : 150px; text-align: left;" >Lotor</td>
+                        <td class="draggable" draggable="true">1,089</td>
+                        <td class="draggable" draggable="true">1,324</td>
+                        <td class="draggable" draggable="true">1,412</td>
+                        <td class="draggable" draggable="true">1,487</td>
+                        <td class="draggable" draggable="true">1,583</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Minor</td>
+                        <td class="draggable" draggable="true">312</td>
+                        <td class="draggable" draggable="true">378</td>
+                        <td class="draggable" draggable="true">340</td>
+                        <td class="draggable" draggable="true">412</td>
+                        <td class="draggable" draggable="true">486</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Simus</td>
+                        <td class="draggable" draggable="true">968</td>
+                        <td class="draggable" draggable="true">812</td>
+                        <td class="draggable" draggable="true">1,173</td>
+                        <td class="draggable" draggable="true">1,003</td>
+                        <td class="draggable" draggable="true">1,295</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Maynardi </td>
+                        <td class="draggable" draggable="true">2,301</td>
+                        <td class="draggable" draggable="true">2,845</td>
+                        <td class="draggable" draggable="true">3,390</td>
+                        <td class="draggable" draggable="true">3,102</td>
+                        <td class="draggable" draggable="true">2,931</td>
+                    </tr>
+                </table>
+                <br>
+                The average weight of a Simus racoon is <div class="draggable" draggable="true"
+                    style="display: inline;">18</div> kg, and the ratio of Lotor
+                : Minor : Simus : Maynardi racoon’s weight is <div class="draggable" draggable="true"
+                    style="display: inline;">7</div> : <div class="draggable" draggable="true" style="display: inline;">
+                    5</div> : <div class="draggable" draggable="true" style="display: inline;">9</div> : <div
+                    class="draggable" draggable="true" style="display: inline;">4</div> .<br><br>
+                <div id="question_title">Question</div>
+                <br>
+
+                <p>What is the average weight per racoon in Year 3?<br>
+                </p>
+                <br>
+                <form>
+                    <label for="14.Case 6">Answer</label>
+                    <br>
+                    <br>
+
+                    <input class="input_answer" type="text" id="Case 6" min="0">
+
+                </form>
+
+            </div>
+            <button class="end_btn" onclick="showConfirmBox()">Finish Study</button>
+
+            <div class="container_main_screen">
+                <div class="overlay" id="overlay" hidden>
+                    <div class="confirm-box">
+                        <h2 id="forward">Are you sure you want to finish the test?</h2><br>
+                        <p id="inside_confirm_p">You won’t be able to change your answer</p>
+                        <button onclick="isConfirm(false)" class="confirm_btn">Back to question</button>
+                        <button onclick="location.href='test_review.html';" class="confirm_btn">Finish test</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right_screen column">
+        <div class="container">
+            <div class="calculator">
+                <div class="display">
+                    <div id="historyDisplay" class="history-display"></div>
+                    <input type="text" id="inputField" lang="en">
+                    <hr id="sep_line">
+                    <div id="result" class="draggable" draggable="true"> 0 </div>
+
+                </div>
+                <div class="buttons">
+                    <button class="calculator-btn items" data-value="AC">AC</button>
+                    <button class="calculator-btn items" data-value="(">(</button>
+                    <button class="calculator-btn items" data-value=")">)</button>
+                    <button class="calculator-btn items" data-value="C">C</button>
+                    <button class="calculator-btn" data-value="7">7</button>
+                    <button class="calculator-btn" data-value="8">8</button>
+                    <button class="calculator-btn" data-value="9">9</button>
+                    <button class="calculator-btn items" data-value="/">/</button>
+                    <button class="calculator-btn" data-value="4">4</button>
+                    <button class="calculator-btn" data-value="5">5</button>
+                    <button class="calculator-btn" data-value="6">6</button>
+                    <button class="calculator-btn items" data-value="*">*</button>
+                    <button class="calculator-btn" data-value="1">1</button>
+                    <button class="calculator-btn" data-value="2">2</button>
+                    <button class="calculator-btn" data-value="3">3</button>
+                    <button class="calculator-btn items" data-value="-">-</button>
+                    <button class="calculator-btn" data-value="0">0</button>
+                    <button class="calculator-btn" data-value=".">.</button>
+                    <button class="calculator-btn" data-value="=">=</button>
+                    <button class="calculator-btn items" data-value="+">+</button>
+                </div>
+            </div>
+        </div>
+        <script src="./js/case_1.js"></script>
+        <script src="./js/cases.js"></script>
+
+</body>
+
+</html>

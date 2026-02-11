@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual | Bar Line</title>
+    <link rel="stylesheet" href="./style/report_graph_pie.css">
+    <link rel="stylesheet" href="./style/calculator.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body class="body">
+    <div class="timer">
+        <p id="count_down"></p>
+    </div>
+    <div id="row">
+        <div class="left column">
+            <!--build the menu and the submenus-->
+            <div class="menu">
+                <ul>
+                    <li class="item" id="invest">
+                        <a href="" class="btn">Investigation</a>
+                        <div class="smenu">
+                        </div>
+                    </li>
+                    <li class="item" id="analysis">
+                        <a href="" class="btn">Analysis</a>
+                        <div class="smenu">
+                        </div>
+                    </li>
+                    <li class="item" id="report">
+                        <a href="" class="btn_active">Report</a>
+                        <div class="smenu">
+                            <a href="">Written</a>
+                            <a href="report_graph.html">Graph</a>
+                            <a href="" class="btn_active">Visual</a>
+                        </div>
+                    </li>
+                </ul>
+                <button id="clearStorage">Restart</button>
+
+            </div>
+        </div>
+        <div class="container_main_screen">
+
+            <div class="overlay" id="overlay" hidden>
+                <div class="confirm-box">
+                    <h2 id="forward">Do you want to move to the next section?</h2> <br>
+                    <p id="inside_confirm_p">You won’t be able to change your answer</p>
+                    <br>
+                    <button onclick="isConfirm(false)" class="confirm_btn">Back to the questions</button>
+                    <button onclick="location.href='case_1.html#analysis';" class="confirm_btn">Move to next
+                        section</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_screen column">
+            <div class="container_main_screen">
+                <div class="Written">
+                    <h1>Add the relevant information to show the number of Monkeys
+                        surviving in Year 10 compared to the actual goal</h1>
+                    <br>
+                    <div class="chart-container">
+                        <div class="canvas-container">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <div class="grid-container">
+                            <div></div>
+                            <div class="header">Revok Forest</div>
+                            <div class="header">Langker Pasture</div>
+                            <div class="row-header">Worst-case</div>
+                            <input id="6. Graph - Revok Forest Worst-case" type="number" class="report_input"
+                                placeholder="Enter Worst-case for Revok Forest">
+                            <input id="6. Graph - Langker Pasture Worst-case" type="number" class="report_input"
+                                placeholder="Enter Worst-case for Langker Pasture">
+                            <div class="row-header">Standard</div>
+                            <input id="6. Graph - Revok Forest Standard" type="number" class="report_input"
+                                placeholder="Enter Standard for Revok Forest">
+                            <input id="6. Graph - Langker Pasture Standard" type="number" class="report_input"
+                                placeholder="Enter Standard for Langker Pasture">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+                            <button class="report_end_btn" onclick="showConfirmBox()">Complete report</button>
+
+        </div>
+        <div class="right_screen">
+            <div class="journal_container" id="Journal_container">
+                <h2>Research Journal</h2>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <script src="./js/pie_graph.js"></script>
+</body>
+
+</html>

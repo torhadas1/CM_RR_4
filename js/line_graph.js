@@ -192,18 +192,18 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',  // Change this line
     data: {
-        labels: ['Y1', 'Y2','Y3', 'Y4', 'Y5'],
+        labels: ['Before winter', 'After winter', 'End of Year 1'],
         datasets: [{
-            label: 'Rendang Island',
-            data: [356, 355, 312,261,0],  // Default values
+            label: 'Adding deer during winter',
+            data: [0, 0, 0],  // Default values
             backgroundColor: 'rgba(255, 99, 132, 0.6)',
             borderColor: 'rgba(255,99,132,1)',
             borderWidth: 1,
             fill: false
         },
         {
-            label: 'Nangi Island',
-            data: [215, 199,191,173,0],  // Default values
+            label: 'Adding deer in spring',
+            data: [0, 0, 0],  // Default values
             backgroundColor: 'rgba(54, 162, 235, 0.6)',
             borderColor: 'rgba(54, 162, 235, 1)',
             borderWidth: 1,
@@ -221,25 +221,33 @@ var myChart = new Chart(ctx, {
         legend: {
             position: 'right',  // moves the legend to the right
             labels: {
-                fontSize: 20  // change this to whatever size you want
+                fontSize: 16  // change this to whatever size you want
             }
         }
     }
 });
 
 function updateChart() {
-    var value1 = document.getElementById('7. Graph - Rendang Island Y5').value || 0;
-    var value2 = document.getElementById('7. Graph - Nangi Island Y5').value || 0;
+    var winterBefore = document.getElementById('7. Graph - Winter - Before').value || 0;
+    var winterAfter = document.getElementById('7. Graph - Winter - After').value || 0;
+    var winterEnd = document.getElementById('7. Graph - Winter - End').value || 0;
+    var springBefore = document.getElementById('7. Graph - Spring - Before').value || 0;
+    var springAfter = document.getElementById('7. Graph - Spring - After').value || 0;
+    var springEnd = document.getElementById('7. Graph - Spring - End').value || 0;
 
-    myChart.data.datasets[0].data = [356, 355, 312, 261, value1];
-    myChart.data.datasets[1].data = [215, 199,191,173, value2];
+    myChart.data.datasets[0].data = [winterBefore, winterAfter, winterEnd];
+    myChart.data.datasets[1].data = [springBefore, springAfter, springEnd];
     myChart.update();
 }
 
 
 // Add input event listeners to all input fields
-document.getElementById('7. Graph - Rendang Island Y5').addEventListener('input', updateChart);
-document.getElementById('7. Graph - Nangi Island Y5').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Winter - Before').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Winter - After').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Winter - End').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Spring - Before').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Spring - After').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Spring - End').addEventListener('input', updateChart);
 
 $(document).on('click', '.remove', function () {
     $(this).parent().next('hr').remove();

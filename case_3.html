@@ -42,55 +42,121 @@
         <!--main screen column-->
         <div class="main_screen column" style="width: 85%;">
             <div class="question_container" style="margin-top: 30px;">
-                Aside from Kapulici Monkeys, Greentail Kagus also consume Ruby Bananas. Greentail Kagus inhabit
-                neighboring islands but
-                not the Ferrenghi Chain. However, in Year 6, Greentail Kagus began migrating to the Ferrenghi Chain in
-                search of food,
-                entering into direct competition with Kapulici Monkeys for Ruby Bananas. An initiative to plant
-                additional Ruby Banana trees
-                was implemented from Year 6 to Year 10.
-                <br>
+                Ecologists tracked bee colony health across the Mistyvale Forest Reserve. For each sub-area, they
+                recorded the number of active colonies and the average honey yield per colony in each season.
+                <br><br>
+                <table class="exhibit-table">
+                    <thead>
+                        <tr>
+                            <th>Sub-area</th>
+                            <th>Spring Colonies
+                            </th>
+                            <th>Spring Yield (kg)
+                            </th>
+                            <th>Summer Colonies</th>
+                            <th>Summer Yield (kg)
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Highwood</td>
+                            <td>
+                                120
+                            </td>
+                            <td>
+                                18
+                            </td>
+                            <td>
+                                135
+                            </td>
+                            <td>
+                                16
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Redwood</td>
+                            <td>
+                                95
+                            </td>
+                            <td>
+                                22
+                            </td>
+                            <td>
+                                100
+                            </td>
+                            <td>
+                                21
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pinecliff</td>
+                            <td>
+                                140
+                            </td>
+                            <td>
+                                15
+                            </td>
+                            <td>
+                                150
+                            </td>
+                            <td>
+                                14
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Marshfield</td>
+                            <td>
+                                110
+                            </td>
+                            <td>
+                                20
+                            </td>
+                            <td>
+                                108
+                            </td>
+                            <td>
+                                19
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
 
                 <br>
                 <div id="the_question_title">Question <br><br></div>
 
-                <p id="the_question">What could be the best type of graph to visualize the impact of the Greentail Kagu
-                    migration on Kapulici Monkey
-                    population as well as the impact on the number of banana trees? Pick only the
-                    option that makes the most
-                    sense.
+                <p id="the_question">Which of the following statements are supported by the data? You may select more
+                    than one.
+
                 </p><br>
                 <form id="Case 3">
                     <label for="Case 3 a" style="margin-bottom: 10px;">
-                        <input type="radio" id="Case 3 a" name="case_3_radio" value="Bar graph of the Greentail Kagu and Kapulici Monkey populations and line graph of the total amount of Ruby 
-                        Bananas eaten in the Ferrenghi Chain"> Bar graph of the Greentail Kagu and Kapulici Monkey
-                        populations and line graph
-                        of the total amount of Ruby
-                        Bananas eaten in the Ferrenghi Chain
+                        <input type="checkbox" id="Case 3 a" name="case_3_radio"
+                            value="Sub-areas with more bee colonies tend to have lower average honey yield per colony. "> Sub-areas
+                        with more bee colonies tend to have lower average honey yield per colony.
                     </label>
 
-                    <label for="Case_3_b" style="margin-bottom: 10px;"> <input type="radio" id="Case 3 b"
-                            name="case_3_radio" value="Line graph of the Greentail Kagu and Kapulici Monkey populations and bar graph of the number of Ruby Banana 
-                        trees">
-                        Line graph of the Greentail Kagu and Kapulici Monkey populations and bar graph
-                        of the number of Ruby Banana
-                        trees</label><br>
+                    <label for="Case_3_b" style="margin-bottom: 10px;"> <input type="checkbox" id="Case 3 b"
+                            name="case_3_radio" value="Increase in number of bee colonies between seasons always reduce yield per colony, and 
+vice-versa. ">
+                         Increase in number of bee colonies between seasons always reduce yield per colony, and
+                        vice-versa. </label><br>
 
-                    <label for="Case_3_c" style="margin-bottom: 10px;"><input type="radio" id="Case 3 c"
-                            name="case_3_radio" value="Line graph of the Greentail Kagu and Kapulici Monkey populations and bar graph of the total amount of Ruby 
-                        Bananas eaten in the Ferrenghi Chain"> Line graph of the Greentail Kagu and Kapulici Monkey
-                        populations and bar graph
-                        of the total amount of Ruby
-                        Bananas eaten in the Ferrenghi Chain</label><br>
+                    <label for="Case_3_c" style="margin-bottom: 10px;"><input type="checkbox" id="Case 3 c"
+                            name="case_3_radio"
+                            value="Marshfield experienced a decline in overall honey production from Spring to Summer. ">
+                        Line graph of the Greentail Kagu and Kapulici Monkey
+                        Marshfield experienced a decline in overall honey production from Spring to Summer. </label><br>
 
-                    <label for="Case_3_d" style="margin-bottom: 10px;"><input type="radio" id="Case 3 d"
-                            name="case_3_radio" value="Bar graph showing the relative populations of Greentail Kagu and Kapulici Monkey and line graph of the number of 
-                        Ruby Banana trees"> Bar graph showing the relative populations of Greentail Kagu and Kapulici
-                        Monkey and line graph of the number of
-                        Ruby Banana trees</label><br>
+                    <label for="Case_3_d" style="margin-bottom: 10px;"><input type="checkbox" id="Case 3 d"
+                            name="case_3_radio"
+                            value="Pinecliff is the most productive bee habitat among the four reserves."> Pinecliff is
+                        the most productive bee habitat among the four reserves.</label><br>
 
                 </form>
-                
+
             </div>
             <div class="container_main_screen">
                 <div class="overlay" id="overlay" hidden>
@@ -104,7 +170,7 @@
                 </div>
             </div>
             <div> <button class="end_btn" onclick="showConfirmBox()">Next Case</button>
-                </div>
+            </div>
         </div>
     </div>
     <!-- <div class="right_screen" id="case_three">

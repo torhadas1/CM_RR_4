@@ -45,35 +45,123 @@
         <!--main screen column-->
         <div class="main_screen column">
             <div class="question_container">
-                <h1>The number of Kapulici Monkeys in Year 6 are as follows:
+                <h1>A research team has been studying the territory growth of Arctic Wolf packs in the Mistyvale Forest
+                    Reserve over several years. Below is a table documenting their territory over four years (in km2).
                 </h1>
                 <br>
-                <ul style="margin-left: 20px;">
-                    <li>Rendang Island = <div class="draggable" draggable="true" style="display: inline;">354</div>
-                    </li>
-                    <li>Feruni Island = <div class="draggable" draggable="true" style="display: inline;">301
-                        </div>
-                    </li>
-                    <li>Manggis Island = <div class="draggable" draggable="true" style="display: inline;">329</div>
-                    </li>
-                    <li>Nangi Island = <div class="draggable" draggable="true" style="display: inline;">278
-                        </div>
-                    </li>
-                </ul> <br>
-                There are <div class="draggable" draggable="true" style="display: inline;">7</div> other monkey species on the Ferrenghi Island Chain and
-                the average population when considering all the monkey species is <div class="draggable" draggable="true" style="display: inline;">1,521</div>.
-                <br><br>
-                <h1 id="question_title" >Question</h1><br>
-                <p style="margin-bottom: 10px;" >What is the average population for the other 7 species (excluding 
-                    Kapulici Monkeys)?</p>
-                    <form>
-                        <br>
-                        <label for="9.Case 1">Answer</label>
-                        <br><br>
-    
-                        <input class="input_answer" type="text" id="Case 1" min="0">
-    
-                    </form>
+                <table class="exhibit-table">
+                    <thead>
+                        <tr>
+                            <th>Arctic Wolf Pack</th>
+                            <th>Y1</th>
+                            <th>Y2</th>
+                            <th>Y3</th>
+                            <th>Y4</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable1"
+                                    data-title="Male Fallow Deer in Highwood" data-value="392">392</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable2"
+                                    data-title="Female Fallow Deer in Highwood" data-value="410">410</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable3" data-title="Frostfang Wolf in Highwood"
+                                    data-value="399">399</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable12"
+                                    data-title="Frostfang Wolf in Marshfield" data-value="461">461</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable4" data-title="Male Fallow Deer in Redwood"
+                                    data-value="175">175</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable5"
+                                    data-title="Female Fallow Deer in Redwood" data-value="174">174</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable6" data-title="Frostfang Wolf in Redwood"
+                                    data-value="193">193</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable12"
+                                    data-title="Frostfang Wolf in Marshfield" data-value="205">205</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable7"
+                                    data-title="Male Fallow Deer in Pinecliff" data-value="598">598</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable8"
+                                    data-title="Female Fallow Deer in Pinecliff" data-value="584">584</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable9" data-title="Frostfang Wolf in Pinecliff"
+                                    data-value="732">732</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable12"
+                                    data-title="Frostfang Wolf in Marshfield" data-value="752">752</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable10"
+                                    data-title="Male Fallow Deer in Marshfield" data-value="478">478</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable11"
+                                    data-title="Female Fallow Deer in Marshfield" data-value="512">512</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable12"
+                                    data-title="Frostfang Wolf in Marshfield" data-value="503">503</div>
+                            </td>
+                            <td>
+                                <div class="draggable" id="exhibit2_draggable12"
+                                    data-title="Frostfang Wolf in Marshfield" data-value="712">712</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <h1 id="question_title">Question</h1><br>
+                <p style="margin-bottom: 10px;">Which year had the largest increase in wolf pack territory compared to
+                    the previous year, and what
+                    was the percentage of that increase? </p>
+                <form>
+                    <br>
+                    <label for="9.Case 1">Answer</label>
+                    <br><br>
+
+                    <select class="select_box" type="text" id="Case 1 Select">
+                        <option disabled selected value></option>
+                        <option value="Year 2">Year 2</option>
+                        <option value="Year 3">Year 3</option>
+
+                        <option value="Year 4">Year 4</option>
+                    </select>
+                    increased by <input class="input_answer" style="width: 70px;" type="number" id="Case 1 Input">% from the previous 
+year.
+
+                </form>
+                <br>
                 <div><button class="end_btn" onclick="showConfirmBox()">Next Case</button></div>
             </div>
             <div class="container_main_screen">
@@ -127,7 +215,7 @@
         <script src="./js/cases.js"></script>
 
 </body>
- <div id="tutorialPopup" style="
+<div id="tutorialPopup" style="
   display:none;
   position:absolute;
   top:50px; left:0; right:0; bottom:0;
@@ -137,14 +225,14 @@
   align-items: center;
   justify-content: center;
 ">
-        <div id="tutorialPopupBox">
-            <div class="tutorial-title">Tutorial</div>
-            <div class="tutorial-text">
-                Please get ready for the next stage of the assessment.<br><br>
-                You will have to answer a few cases to complete your research.
-            </div>
-            <button id="tutorialContinueBtn" class="tutorial-continue-btn">Continue</button>
+    <div id="tutorialPopupBox">
+        <div class="tutorial-title">Tutorial</div>
+        <div class="tutorial-text">
+            Please get ready for the next stage of the assessment.<br><br>
+            You will have to answer a few cases to complete your research.
         </div>
+        <button id="tutorialContinueBtn" class="tutorial-continue-btn">Continue</button>
     </div>
+</div>
 
 </html>

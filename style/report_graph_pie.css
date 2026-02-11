@@ -1,6 +1,6 @@
 /* styles.css */
 .chart-container {
-  width: 500px;
+  width: 600px;
   height: 500px;
 
   margin-left: 60px;
@@ -15,7 +15,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 150px 60px 60px 60px 60px 80px;
+  grid-template-columns: 150px 150px 150px 150px;
   gap: 5px;
   align-items: center;
   margin-bottom: 10px;
@@ -24,7 +24,7 @@
 .grid-container .header{
   font-weight: bold;
   text-align: center;
-  width: 20px;
+  width: 150px;
 }
 
 .grid-container .row-header {

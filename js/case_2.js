@@ -67,10 +67,11 @@ function showConfirmBox() {
     const value = $(this).val();
     localStorage.setItem(id, value);
   });
-  const selectedRadio = $('input[type=radio][name=case_3_radio]:checked');
-  const id = selectedRadio.attr('id');
-  const value = selectedRadio.val();
-  localStorage.setItem(id, value);
+  $('input[type=checkbox][name=case_3_radio]:checked').each(function () {
+    const id = $(this).attr('id');
+    const value = $(this).val();
+    localStorage.setItem(id, value);
+  });
   
 }
 function closeConfirmBox() {

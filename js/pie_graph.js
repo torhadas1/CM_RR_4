@@ -191,26 +191,24 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ['Rendang Island - Y1', 'Rendang Island - Y2','Rendang Island - Y3', 'Rendang Island - Y4', 'Rendang Island - Y5','Nangi Island - Y1','Nangi Island - Y2','Nangi Island - Y3','Nangi Island - Y4','Nangi Island - Y5'],
+        labels: ['Winter - Before', 'Winter - After', 'Winter - End', 'Spring - Before', 'Spring - After', 'Spring - End'],
         datasets: [{
-            data: [356, 355, 312,261,0,215, 199,191,173,0],  // Default values
+            data: [0, 0, 0, 0, 0, 0],  // Default values
             backgroundColor: [
-                'rgba(0, 0, 0, 0.6)',
-                'rgba(0, 100, 100, 0.6)',
-                'rgba(100, 100, 0, 0.6)',
-                'rgba(100, 0, 100, 0.6)',
-                'rgba(50, 100, 150, 0.6)',
-                'rgba(150, 100, 50, 0.6)',
-                'rgba(200, 30, 10, 0.6)',
-                'rgba(30, 200, 10, 0.6)',
-                'rgba(10, 30, 200, 0.6)',
-                'rgba(260, 192, 130, 0.6)'
+                'rgba(255, 99, 132, 0.9)',
+                'rgba(54, 162, 235, 0.9)',
+                'rgba(255, 206, 86, 0.9)',
+                'rgba(75, 192, 192, 0.9)',
+                'rgba(153, 102, 255, 0.9)',
+                'rgba(255, 159, 64, 0.9)'
             ],
             borderColor: [
                 'rgba(255,99,132,1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)'
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1,
         }]
@@ -220,22 +218,30 @@ var myChart = new Chart(ctx, {
         maintainAspectRatio: true,
         legend: {
             labels: {
-                fontSize: 14  // change this to whatever size you want
+                fontSize: 20  // change this to whatever size you want
             }
         }
     }
 });
 
 function updateChart() {
-    var value1 = document.getElementById('7. Graph - Rendang Island Y5').value || 0;
-    var value2 = document.getElementById('7. Graph - Nangi Island Y5').value || 0;
+    var winterBefore = document.getElementById('7. Graph - Winter - Before').value || 0;
+    var winterAfter = document.getElementById('7. Graph - Winter - After').value || 0;
+    var winterEnd = document.getElementById('7. Graph - Winter - End').value || 0;
+    var springBefore = document.getElementById('7. Graph - Spring - Before').value || 0;
+    var springAfter = document.getElementById('7. Graph - Spring - After').value || 0;
+    var springEnd = document.getElementById('7. Graph - Spring - End').value || 0;
 
-    myChart.data.datasets[0].data = [356, 355, 312, 261, value1,215, 199,191,173,value2];
+    myChart.data.datasets[0].data = [winterBefore, winterAfter, winterEnd, springBefore, springAfter, springEnd];
     myChart.update();
 }
 // Add input event listeners to all input fields
-document.getElementById('7. Graph - Rendang Island Y5').addEventListener('input', updateChart);
-document.getElementById('7. Graph - Nangi Island Y5').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Winter - Before').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Winter - After').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Winter - End').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Spring - Before').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Spring - After').addEventListener('input', updateChart);
+document.getElementById('7. Graph - Spring - End').addEventListener('input', updateChart);
 
 $(document).on('click', '.remove', function () {
     $(this).parent().next('hr').remove();

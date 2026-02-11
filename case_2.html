@@ -44,59 +44,51 @@
         <!--main screen column-->
         <div class="main_screen column">
             <br>
-            <div class="question_container"> The NGO is studying Striped Anacondas in other neighboring islands to
-                determine their feeding habits. The
-                following graph illustrates their findings:
+            <div class="question_container"> A wildlife research team is studying five different bird populations across
+                four different sub-areas
+                within the Mistyvale Forest Reserve. These bird species are territorial and do not move between sub
+                areas.
             </div>
 
             <br>
-            <img src="./img/Case_1.png" alt="cases_bar_chart">
             <div class="question_container">
                 <div class="question_title">Question</div>
                 <br>
-                <p>Which is the species with the highest mean and highest median in terms of average annual consumption?
+                <p> What could be the best graph type to visualize how individual bird populations compare against each
+                    other within and between sub-areas.
                 </p>
                 <br>
-                <label for="Case 2 Highest mean">Highest mean</label>
-                <select class="select_box" id="Case 2 Highest mean" name="case_2_Highest_mean"
-                    style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
-                    <option value="" selected disabled hidden>Choose</option>
-                    <option value="Bushy Capybaras
-                    ">Bushy Capybaras
-                    </option>
-                    <option value="Kapulici Monkeys
-                    ">Kapulici Monkeys
-                    </option>
-                    <option value="Pocket Monkeys
-                    ">Pocket Monkeys
-                    </option>
-                    <option value="Pilliga Mice
-                    ">Pilliga Mice
-                    </option>
-                </select>
+                <form id="Case 2">
+                    <label for="Case 2 a" style="margin-bottom: 10px;">
+                        <input type="radio" id="Case 3 a" name="case_2_radio" value="Individual pie charts for each sub-area. 
+"> Individual pie charts for each sub-area.
+
+                    </label><br>
+
+                    <label for="Case_2_b" style="margin-bottom: 10px;"> <input type="radio" id="Case 2 b"
+                            name="case_2_radio" value="Line graph showing species populations with each line representing a bird species. 
+">
+                        Line graph showing species populations with each line representing a bird species.
+                    </label><br>
+
+                    <label for="Case_2_c" style="margin-bottom: 10px;"><input type="radio" id="Case 2 c"
+                            name="case_2_radio" value="Mekko (Marimekko) chart with width representing total population by sub-area and height 
+representing species composition. "> Mekko (Marimekko) chart with width representing total population by sub-area and
+                        height
+                        representing species composition. </label><br>
+
+                    <label for="Case_2_d" style="margin-bottom: 10px;"><input type="radio" id="Case 2 d"
+                            name="case_2_radio"
+                            value="Simple bar chart with each bar representing population of one species in one sub-area. ">
+                        Simple
+                        bar chart with each bar representing population of one species in one sub-area. </label><br>
+
+                </form>
+                <br>
+
                 <br>
 
 
-                <label for="Case 2 Highest median">Highest median</label>
-                <select class="select_box" id="Case 2 Highest median" name="case_2_Highest_median"
-                    style="margin-left: 2px; margin-top: 5px; margin-bottom: 5px;">
-                    <option value="" selected disabled hidden>Choose</option>
-                    <option value="Bushy Capybaras
-                    ">Bushy Capybaras
-                    </option>
-                    <option value="Kapulici Monkeys
-                    ">Kapulici Monkeys
-                    </option>
-                    <option value="Pocket Monkeys
-                    ">Pocket Monkeys
-                    </option>
-                    <option value="Pilliga Mice
-                    ">Pilliga Mice
-                    </option>
-                </select>
-                <br>
-
-                
                 <br>
 
                 <div><button class="end_btn" onclick="showConfirmBox()">Next Case</button></div>

@@ -388,6 +388,11 @@ function showConfirmBox() {
     const value = $(this).val();
     localStorage.setItem(id, value);
   });
+  $('input[type=radio]:checked').each(function () {
+    const id = $(this).attr('id');
+    const value = $(this).val();
+    localStorage.setItem(id, value);
+  });
 
 
   document.getElementById("overlay").hidden = false;

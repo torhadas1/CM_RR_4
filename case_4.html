@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6 Cases | Case 4</title>
-    <link rel="stylesheet" href="./style/case_1.css">
+    <link rel="stylesheet" href="./style/case_7.css">
     <link rel="stylesheet" href="./style/cases_general.css">
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -43,49 +43,89 @@
         </div>
         <!--main screen column-->
         <div class="main_screen column">
-            <br>
-            <div class="question_container"> Your NGO has compiled the following data regarding other species in the
-                Ferrenghi Chain during Year 6:
+            <div class="question_container" style="margin-right: 30px;">
+                <h1> Below is a table documenting how land in the Mistyvale Forest Reserve is allocated.
+                </h1>
+                <br>
+                <table class="exhibit-table">
+                    <tr>
+                        <th>Land Allocation</th>
+                        <th>% of Total Land</th>
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Forest</td>
+                        <td>
+                            <div class="draggable" draggable="true">50</div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Flatlands</td>
+                        <td>
+                            <div class="draggable" draggable="true">20</div>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Mountains</td>
+                        <td>
+                            <div class="draggable" draggable="true">13</div>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Lakes / Rivers</td>
+                        <td>
+                            <div class="draggable" draggable="true">7</div>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Fjords</td>
+                        <td>
+                            <div class="draggable" draggable="true">6</div>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Public Amenities (e.g., roads, camp grounds)</td>
+                        <td>
+                            <div class="draggable" draggable="true">4</div>
+                        </td>
+
+
+                    </tr>
+
+                </table>
+                <br>
+                <div id="question_title">Question</div><br>
+
+                The governing body of the Reserve would like to use Flatlands to increase existing Forest coverage by
+                <div class="draggable" draggable="true" style="display: inline;">4%</div> through replanting. In
+                addition, some Flatlands will also be used to increase Public Amenities
+                space by <div class="draggable" draggable="true" style="display: inline;">25%</div>. Once these
+                initiatives are completed, what would be the ratio of flatlands to
+                mountains? Please round your answer to the nearest 1 decimal point. <br><br>
+                <br>
+                <form>
+                    <div class="input_box">
+                        <label for="case_4">Ratio = </label>
+                        <input type="text" class="input_answer" id="Case 4 Ratio" min="0">
+                    </div>
+
+                </form>
+
             </div>
+            <button class="end_btn" onclick="showConfirmBox()">Next Case</button>
 
-            <br>
-            <img src="./img/Case_4.png" alt="cases_bar_chart">
-            <div class="question_container" style="margin-right: 20px;">
-                <div id="the_question_title" style="font-weight: 500;">Question <br><br></div>
-
-                <p id="the_question">Which information is true based on the data provided? You can select multiple
-                    options.
-                </p><br>
-                <radio>
-                    <label for="Case 4 a">
-                        <input type="radio" id="Case 4 a" name="case_3_radio" value="If the number of Grey Squirrels is above average in a given area, the number of Spotted Deer in that 
-                        area is below average"> If the number of Grey Squirrels is above average in a given area, the
-                        number of Spotted Deer in that
-                        area is below average<br style="line-height: 15px;">
-                    </label>
-
-                    <label for="Case_4_b" style="margin-bottom: 20px;"> <input type="radio" id="Case 4 b"
-                            name="case_3_radio"
-                            value="There are more Spotted Deer predators present in Manggis Island than in Nangi Island"
-                            style="margin-bottom: 10px;">
-                        There are more Spotted Deer predators present in Manggis Island than in Nangi Island<br></label>
-
-                    <label for="Case_4_c" style="margin-bottom: 10px;"><input type="radio" id="Case 4 c"
-                            name="case_3_radio" value="If the number of Grey Squirrels in an area is below average, the number of Swift Parrots is below 
-                            average" style="margin-bottom: 10px;"> If the number of Grey Squirrels in an area is below
-                        average, the number of Swift
-                        Parrots is below
-                        average<br></label>
-
-                    <label for="Case_4_d" style="margin-bottom: 10px;"><input type="radio" id="Case 4 d"
-                            name="case_3_radio" value="None of the above" style="margin-bottom: 10px;"> None of the
-                        above</label><br>
-                </radio>
-
-            </div>
             <div class="container_main_screen">
                 <div class="overlay" id="overlay" hidden>
-                    <div class="confirm-box" style="top: 50%;">
+                    <div class="confirm-box">
                         <h2 id="forward">Do you want to move to the next question?</h2><br>
                         <p id="inside_confirm_p">You won’t be able to change your answer</p>
                         <br>
@@ -94,12 +134,44 @@
                     </div>
                 </div>
             </div>
-            <div><button class="end_btn" onclick="showConfirmBox()">Next Case</button></div>
-
         </div>
     </div>
-    <script src="./js/calculator.js"></script>
-    <script src="./js/cases.js"></script>
+    <div class="right_screen column">
+        <div class="container">
+            <div class="calculator">
+                <div class="display">
+                    <div id="historyDisplay" class="history-display"></div>
+                    <input type="text" id="inputField" lang="en">
+                    <hr id="sep_line">
+                    <div id="result" class="draggable" draggable="true"> 0 </div>
+
+                </div>
+                <div class="buttons">
+                    <button class="calculator-btn items" data-value="AC">AC</button>
+                    <button class="calculator-btn items" data-value="(">(</button>
+                    <button class="calculator-btn items" data-value=")">)</button>
+                    <button class="calculator-btn items" data-value="C">C</button>
+                    <button class="calculator-btn" data-value="7">7</button>
+                    <button class="calculator-btn" data-value="8">8</button>
+                    <button class="calculator-btn" data-value="9">9</button>
+                    <button class="calculator-btn items" data-value="/">/</button>
+                    <button class="calculator-btn" data-value="4">4</button>
+                    <button class="calculator-btn" data-value="5">5</button>
+                    <button class="calculator-btn" data-value="6">6</button>
+                    <button class="calculator-btn items" data-value="*">*</button>
+                    <button class="calculator-btn" data-value="1">1</button>
+                    <button class="calculator-btn" data-value="2">2</button>
+                    <button class="calculator-btn" data-value="3">3</button>
+                    <button class="calculator-btn items" data-value="-">-</button>
+                    <button class="calculator-btn" data-value="0">0</button>
+                    <button class="calculator-btn" data-value=".">.</button>
+                    <button class="calculator-btn" data-value="=">=</button>
+                    <button class="calculator-btn items" data-value="+">+</button>
+                </div>
+            </div>
+        </div>
+        <script src="./js/case_1.js"></script>
+        <script src="./js/cases.js"></script>
 
 </body>
 

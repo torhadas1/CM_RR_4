@@ -59,188 +59,209 @@
                 <div id="objective" class=container>
 
                     <div id="research_info_title" class=container>Research Information</div><br>
-                    <div class="the_main_text">You recently joined a wildlife NGO focused on protecting Kapulici
-                        Monkeys, an endangered species only found on 4 islands near the
-                        coast of South America. On your first day, you receive data regarding
-                        the Kapulici Monkeys that inhabit the Ferrenghi Island Chain. </div>
+                    <div class="the_main_text">You are a conservationist assigned to the Mistyvale Forest Reserve, once
+                        famed for its Fallow Deer
+                        herds but now struggling after a disease ravaged the population. The overall herd size has
+                        declined
+                        considerably, with females being particularly impacted. As a result, the ability of the herd to
+                        rebuild
+                        naturally through reproduction is reduced. </div>
                     <br>
-                    <div class="draggable" id="objective_line" data-title="Goal">OBJECTIVE: Understand if the banana
-                        planting and anaconda
-                        relocation programs will help the Kapulici Monkey population reach
-                        the previous levels of Year 1 in Rendang and Nangi Island.
+                    <div class="the_main_text">To restore the deer population, your team plans to introduce new female
+                        deer from other regions.</div>
+                    <br>
+                    <div class="draggable" id="objective_line" data-title="Objective">Determine the best time to
+                        introduce the new female Fallow Deer to the Highwood and Redwood
+                        sub-areas to maximize herd population after a year.
                     </div>
 
+                </div>
+                <div id="study" class="container"><br>
+                    Study Information
+                    <div class="container"><br>
+                        Winter, which lasts <div class="draggable study_drag" id="duration_winter" draggable="true"
+                            data-title="Duration of Winter">3 months</div> and is particularly harsh in Mistyvale, is
+                        fast approaching. Mating
+                        season occurs in <div class="draggable study_drag" id="mating_season" draggable="true"
+                            data-title="Mating Season">Spring</div>, and Fallow Deer are known to be very selective when
+                        choosing a mate.
+                        Periods of bonding is usually required before mating occurs. As a result, your team is
+                        considering 2
+                        options:<br><br>
+
+                        Option 1:<br>
+                        <div class="draggable study_drag" draggable="true" id="option1" data-title="Option 1">
+                            Add 60 female deer to each sub-area right as winter starts (Month 1) to allow for more
+                            bonding time,
+                            but a lower chance of surviving the winter months.
+                        </div><br><br>
+
+                        Option 2:<br>
+                        <div class="draggable study_drag" draggable="true" id="option2" data-title="Option 2">
+                            Add 60 female deer to each sub-area right as spring starts (Month 4) to avoid death during
+                            winter
+                            months, but reduced bonding time.
+                        </div><br><br><br>
+
+                        The following represents the expected mortality of Fallow Deer due to the harsh winter:
+                    </div>
                 </div>
                 <div id="first_exhibit" class="container">
-                    <br> Exhibit 1: Anacondas & Ruby Banana Trees in the Island Chain – Year 4
-                    <div class="island">
-                        <img src="./img/Exhibit 1.png" alt="the island">
-                        <div class="draggable" id="exhibit_draggable1" data-title="Anacondas in Rendang Island" data-value="11">
-                            11
-                        </div class=container>
-                        <div class="draggable" id="exhibit_draggable2" data-title="Banana trees in Rendang Island" data-value="40">40
-                        </div>
-                        <div class="draggable" id="exhibit_draggable3" data-title="Anacondas in Feruni Island" data-value="10">10</div>
-                        <div class="draggable" id="exhibit_draggable4" data-title="Banana trees in Feruni Island" data-value="41">41
-                        </div>
-                        <div class="draggable" id="exhibit_draggable5" data-title="Anacondas in Manggis Island" data-value="8">
-                            8
-                        </div class=container>
-                        <div class="draggable" id="exhibit_draggable6" data-title="Banana trees in Manggis Island" data-value="33">33
-                        </div>
-                        <div class="draggable" id="exhibit_draggable7" data-title="Anacondas in Nangi Island" data-value="9">9</div>
-                        <div class="draggable" id="exhibit_draggable8" data-title="Banana trees in Nangi Island" data-value="28">28
-                        </div>
-                    </div>
+                    <br> Exhibit 1: Mortality of Fallow Deer due to the Winter
+                    <table class="exhibit-table">
+                        <thead>
+                            <tr>
+                                <th>Winter Month</th>
+                                <th>Mortality (out of population at start of month)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <div class="draggable" id="exhibit_draggable2"
+                                        data-title="Mortality during winter month 1" data-value="1 out of 6">1 out of 6
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div class="draggable" id="exhibit_draggable4"
+                                        data-title="Mortality during winter month 2" data-value="1 out of 10">1 out of
+                                        10</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <div class="draggable" id="exhibit_draggable6"
+                                        data-title="Mortality during winter month 3" data-value="1 out of 10">1 out of
+                                        10</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container study-text">
+                    <br>
+                    The mortality rate will <div class="draggable study_drag" draggable="true" id="mortality_gender"
+                        data-title="Impact of winter mortality by gender">apply equally to male and female deer</div>.
+                    <br><br>
+                    In addition to winter-related deaths, Fallow deer are also <div class="draggable study_drag"
+                        draggable="true" id="predators" data-title="Fallow deer predators">hunted by Frostfang Wolves
+                    </div>. On average,
+                    Frostfang Wolves have a kill rate (deer per wolf per month) of <div class="draggable study_drag"
+                        id="kill_rate" draggable="true" data-title="Frostfang Wolf non-winter kill rate">0.4 during
+                        non-winter months</div>. During
+                    winter months, this <div class="draggable study_drag" draggable="true" id="winter_kill_rate"
+                        data-title="Change in Frostfang Wolf kill rate during winter">increases by 50%</div>. Male and
+                    female Fallow Deer are <div class="draggable study_drag" draggable="true" id="hunting_habits"
+                        data-title="Frostfang Wolf hunting habits by gender of Fallow Deer">hunted proportionately</div> by
+                        the Frostfang Wolves.<br><br>
+
+                    Assume that there are <div class="draggable study_drag" draggable="true" id="other_factors"
+                        data-title="Other factors impacting Fallow Deer population">no other expected causes of death</div>
+                        beyond those outlined above.<br><br><br>
+
+                    Field teams have surveyed each sub-area in Mistyvale to provide the following snapshot on Fallow
+                    Deer and Frostfang Wolf populations:
                 </div>
                 <div id="second_exhibit" class="container">
-                    Exhibit 2: Kapulici Monkey Population Across Islands (Years 1-4)
-                    <div class="chart">
-                        <img src="./img/Exhibit 2.png" alt="the chart">
-                        <div class="draggable" id="exhibit2_draggable1" data-title="Kapulici Monkeys in Rendang 
-                        Island, Y1"  data-value="356" >356
-                        </div>
-                        <div class="draggable" id="exhibit2_draggable2" data-title="Kapulici Monkeys in Rendang 
-                        Island, Y2" data-value="355">355
-                        </div>
-                        <div class="draggable" id="exhibit2_draggable3" data-title="Kapulici Monkeys in Rendang 
-                        Island, Y3" data-value="312">312
-                        </div>
-                        <div class="draggable" id="exhibit2_draggable4" data-title="Kapulici Monkeys in Rendang 
-                        Island, Y4" data-value="261">261
-                        </div>
-                        <div class="draggable" id="exhibit2_draggable5" data-title="Kapulici Monkeys in Feruni
-                        Island, Y1" data-value="284">284</div>
-                        <div class="draggable" id="exhibit2_draggable6" data-title="Kapulici Monkeys in Feruni
-                        Island, Y2" data-value="281">281</div>
-                        <div class="draggable" id="exhibit2_draggable7" data-title="Kapulici Monkeys in Feruni
-                        Island, Y3" data-value="243">243
-                        </div>
-                        <div class="draggable" id="exhibit2_draggable8" data-title="Kapulici Monkeys in Feruni
-                        Island, Y4" data-value="206">206</div>
-                        <div class="draggable" id="exhibit2_draggable9" data-title="Kapulici Monkeys in Manggis 
-                        Island, Y1" data-value="329">329</div>
-                        <div class="draggable" id="exhibit2_draggable10" data-title="Kapulici Monkeys in Manggis 
-                        Island, Y2" data-value="314">314
-                        </div>
-                        <div class="draggable" id="exhibit2_draggable11" data-title="Kapulici Monkeys in Manggis 
-                        Island, Y3" data-value="294">294
-                        </div>
-                        <div class="draggable" id="exhibit2_draggable12" data-title="Kapulici Monkeys in Manggis 
-                        Island, Y4" data-value="217">217
-                        </div>
-                        <div class="draggable" id="exhibit2_draggable13" data-title="Kapulici Monkeys in Nangi
-                        Island, Y1" data-value="215">215
-                        </div>
-                        <div class="draggable" id="exhibit2_draggable14" data-title="Kapulici Monkeys in Nangi
-                        Island, Y2" data-value="199">199
-                        </div>
-                        <div class="draggable" id="exhibit2_draggable15" data-title="Kapulici Monkeys in Nangi
-                        Island, Y3" data-value="191">191
-                        </div>
-                        <div class="draggable" id="exhibit2_draggable16" data-title="Kapulici Monkeys in Nangi
-                        Island, Y4" data-value="173">173
-                        </div>
-                    </div>
+                    <br> Exhibit 2: Fallow Deer & Frostfang Wolf Counts (Month 0)
+                    <table class="exhibit-table">
+                        <thead>
+                            <tr>
+                                <th>Sub-area</th>
+                                <th>Male Fallow Deer<br>(Start of year)</th>
+                                <th>Female Fallow Deer<br>(Start of year)</th>
+                                <th>Frostfang Wolf<br>(Start of year)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Highwood</td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable1"
+                                        data-title="Male Fallow Deer in Highwood" data-value="105">105</div>
+                                </td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable2"
+                                        data-title="Female Fallow Deer in Highwood" data-value="40">40</div>
+                                </td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable3"
+                                        data-title="Frostfang Wolf in Highwood" data-value="2">2</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Redwood</td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable4"
+                                        data-title="Male Fallow Deer in Redwood" data-value="120">120</div>
+                                </td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable5"
+                                        data-title="Female Fallow Deer in Redwood" data-value="35">35</div>
+                                </td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable6"
+                                        data-title="Frostfang Wolf in Redwood" data-value="3">3</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pinecliff</td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable7"
+                                        data-title="Male Fallow Deer in Pinecliff" data-value="105">105</div>
+                                </td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable8"
+                                        data-title="Female Fallow Deer in Pinecliff" data-value="45">45</div>
+                                </td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable9"
+                                        data-title="Frostfang Wolf in Pinecliff" data-value="4">4</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Marshfield</td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable10"
+                                        data-title="Male Fallow Deer in Marshfield" data-value="110">110</div>
+                                </td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable11"
+                                        data-title="Female Fallow Deer in Marshfield" data-value="50">50</div>
+                                </td>
+                                <td>
+                                    <div class="draggable" id="exhibit2_draggable12"
+                                        data-title="Frostfang Wolf in Marshfield" data-value="3">3</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div id="study" class="container">
-
-                    Ferrenghi Island Chain Information
-                    <div class="container"><br>
-                        In order to ensure that the Kapulici Monkeys do not go extinct in the
-                        Ferrenghi Island Chain, your NGO aims to bring the Kapulici
-                        population in each main island back to Year 1 levels
-                        <div class="draggable study_drag" id="monkeys_for_haeyenas" draggable="true"
-                            data-title="Timeline to achieve goal">by the end of Year 5</div>.
-                        Due to the islands in the Ferrenghi Island Chain being separated by
-                        the ocean, <div class="draggable study_drag" id="haeyanas_for_monkeys" draggable="true"
-                            data-title="Restriction #1">inter-island movement is impossible
-                        </div>. <div class="draggable study_drag" id="for_monkeys" draggable="true"
-                            data-title="Restriction #2">Relocation efforts by humans are not possible
-                        </div>
-                        to avoid breaking up Kapulici
-                        families. <br><br>
-                        The 3 main species on the island chain are: Kapulici Monkeys, Striped
-                        Anacondas, and Bushy Capybaras. The primary food source of
-                        Striped Anacondas are
-                        <div class="draggable study_drag" draggable="true" id="2_dragable" data-title="Food source of Striped
-                            Anacondas">Bushy Capybaras </div>
-                        ; unfortunately, a <br>
-                        <div class="draggable study_drag" draggable="true" id="evolution" data-title="Evolution of Bushy Capybara 
-                            population">disease from Year 2 has decimated the Bushy Capybara population</div>, thereby
-                        <div class="draggable study_drag" draggable="true" id="2___dragable" data-title="Change in Striped Anaconda 
-                        eating habits">forcing Striped Anacondas to hunt more Kapulici Monkeys </div>
-                        .<br><br> By analyzing the population data for these 2 species, it was
-                        determined that, on average, a Striped Anaconda consumes <br>
-                        <div class="draggable study_drag" id="ratio" draggable="true" data-title="Striped Anaconda 
-                                consumption"> 1 Kapulici Monkey a month in Rendang island</div>.<br><br>  This varies island
-                        by
-                        island given varying Capybara populations, with
-                        the ratio Rendang Island : Feruni Island : Manggis Island : Nangi Island
-                        being
-                        <div class="draggable study_drag" draggable="true" data-title="Ratio of Kapulici Monkeys eaten 
-                                in Rendang Island : Feruni
-                                Island : Manggis Island : Nangi
-                                Island" id="banana_trees_evolution">
-                            1: 1.2 : 2 : 1.5</div>
-                        <br><br>
-                        Kapulici Monkeys are a relatively short-lived species with an average lifespan of just
-                        <div class="draggable study_drag" draggable="true" data-title="Average Kapulici Monkey 
-                                lifespan" id="average_monkey_lifespan"> 10 years
-                        </div>. Historically, the Kapulici Monkey population
-                        on the Ferrenghi Chain have been
-                        <div class="draggable study_drag" draggable="true" data-title="Kapulici Monkey demographics"
-                            id="monkey_demographic"> evenly split gender-wise
-                        </div>.<br>
-                        <div class="draggable study_drag" draggable="true" data-title="Kapulici Monkeys that mate 
-                                    each year" id="monkey_mating"> Five-sixths of females
-                        </div> will mate in a given year, giving birth to an <div class="draggable study_drag"
-                            draggable="true" data-title="New Kapulici Monkey births" id="monkey_aveage_baby">
-                            average of 1.5 babies annually
-                        </div> . Nonetheless, this is <br>
-                        <div class="draggable study_drag" draggable="true" data-title="Limits on Kapulici Monkey 
-                            population" id="monkey_constrained"> constrained by availability of food
-                        </div>. <br><br>
-                        Kapulici Monkeys are picky eaters – they only consume Ruby Bananas.
-                        <div class="draggable study_drag" draggable="true" data-title="Relationship between Ruby 
-                            Banana trees and Kapulici 
-                            Monkeys" id="relationship_banana" style="display: inline;"> 1 Ruby Banana tree can sustain a population of 8
-                            Kapulici Monkeys
-                        </div>. Unfortunately, the number of Ruby Banana trees have also declined in
-                        recent years for unknown reasons.<br><br>
-                        Accordingly, your NGO has defined the following activities to be
-                        completed after the end of Year 4:
-                    </div>
-                    <ul class="inner_ul" style="list-style-type: disc;">
-                        <li class="inner_list">
-                            <div class="draggable study_drag" draggable="true" id="activity_chocolate"
-                                data-title="Activity #1 to be completed end of year 4">
-                                Relocate 8 Anacondas from each island to nearby islands outside
-                                the Ferrenghi Island Chain with more abundant food sources
-                            </div>
-                        </li>
-                        <li class="inner_list">
-                            <div class="draggable study_drag" draggable="true" id="activity_chocolate1"
-                                data-title="Activity #2 to be completed end of year 4">
-                                Move 8 Ruby Banana trees to Rendang Island
-
-                            </div>
-                        </li>
-                        <li class="inner_list">
-                            <div class="draggable study_drag" draggable="true" id="activity_chocolate2"
-                                data-title="Activity #3 to be completed end of year 4">
-                                Move 5 Ruby Banana trees to Feruni Island
-                            </div>
-                        </li>
-                        <li class="inner_list">
-                            <div class="draggable study_drag" draggable="true" id="activity_chocolate3"
-                                data-title="Activity #4 to be completed end of year 4">
-                                Move 11 Ruby Banana trees to Manggis Island
-                            </div>
-                        </li>
-                    </ul>
-
+                <div class="container study-text">
                     <br>
+                    Fallow Deer <div class="draggable study_drag" draggable="true"
+                        id="breeding_period" data-title="Fallow Deer peak breeding period">typically breed in mid spring (Months 5)</div>,
+                    with a gestation period of about <div class="draggable study_drag" draggable="true" id="gestation"
+                        data-title="Fallow Deer gestation period">four months</div>.
+                    The fawn (baby deer) is not expected to have higher mortality than adults due to Frostfang
+                    Wolves.<br><br>
+
+                    If the additional Fallow Deer were added during Winter, then <div class="draggable study_drag"
+                        draggable="true" id="breeding_rate_option1" data-title="Breeding rate under Option 1">80% of all
+                        surviving adult females</div> (both
+                        existing and new) will breed. If bonding was limited, only <div
+                        class="draggable study_drag" draggable="true" id="breeding_rate_option2"
+                        data-title="Breeding rate under Option 2">20% of all surviving adult females</div> (both
+                        existing and new) will breed. Each successful breeding results in <div
+                        class="draggable study_drag" draggable="true" data-title="Outcome of breeding"
+                        id="breeding_outcome">1 fawn</div>.
+
+                    <br><br>
 
                     <div>
                         <button class="end_btn" onclick="showConfirmBox()">Complete Investigation</button>

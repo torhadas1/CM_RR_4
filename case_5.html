@@ -48,62 +48,134 @@
                     Lowland Pacas and Leopards in Year 6 to Year 8. Leopards eat <br> Lowland
                     Pacas, and Lowland Pacas in turn eat Felthorn Bushes.</h1>
                 <br>
-                <table>
+                <table class="exhibit-table">
                     <tr>
-                        <th> </th>
-                        <th>Year 6</th>
-                        <th>Year 7</th>
-                        <th>Year 8</th>
+                        <th> Year (n)</th>
+                        <th>Fawns born
+                            (F)</th>
+                        <th>Predator
+                            Density (p) </th>
+                        <th> Vegetation
+                            Density (v)
+                        </th>
+                        <th>Harsh Winter
+                            (w) </th>
+                        <th>Surviving
+                            Fawns (S) </th>
                     </tr>
                     <tr>
-                        <td style="width : 200px; text-align: left;" >Felthorn Bushes (B)</td>
-                        <td class="draggable" draggable="true">20</td>
-                        <td class="draggable" draggable="true">35</td>
-                        <td class="draggable" draggable="true">50</td>
+                        <td style="text-align: left;">1</td>
+                        <td>
+                            <div class="draggable" draggable="true">800
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">1
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">1
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">0
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">560
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;" >Leopards (L)</td>
-                        <td class="draggable" draggable="true">5</td>
-                        <td class="draggable" draggable="true">8</td>
-                        <td class="draggable" draggable="true">10</td>
-
+                        <td style="text-align: left;">2</td>
+                        <td>
+                            <div class="draggable" draggable="true">800
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">2
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">1
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">1
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">410
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;">Lowland Pacas (P)</td>
-                        <td class="draggable" draggable="true">10</td>
-                        <td class="draggable" draggable="true">25</td>
-                        <td class="draggable" draggable="true">50</td>
-
+                        <td style="text-align: left;">3</td>
+                        <td>
+                            <div class="draggable" draggable="true">400
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">1.5
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">1.5
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">1
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">230
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">4</td>
+                        <td>
+                            <div class="draggable" draggable="true">960
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">1.5
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">1
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">0
+                            </div>
+                        </td>
+                        <td>
+                            <div class="draggable" draggable="true">622
+                            </div>
+                        </td>
                     </tr>
 
                 </table>
                 <br>
-                Assume that in Year 6, an unknown and unexpected disease started
-                infecting Lowland Pacas, which reduces their population by <div class="draggable" draggable="true"
-                    style="display: inline;">50%</div> in
-                Year 7 and Year 8, compared to the current estimates for those years. This disease was not accounted for in the
-                forecast above.<br><br>
+
                 <div id="question_title">Question</div><br>
-                <p>Which equation best defines the new relationship between Felthorn
-                    Bushes, Lowland Pacas and Leopards in Year 8?<br>
+                <p>Which formula best describes the relationship shown in the data?
+                    <br>
                 </p>
                 <br>
                 <form>
                     <radio>
                         <label for="Case 5 a">
-                            <input type="radio" id="Case 5 a" name="case_3_radio" value="P = (3*B – 10*L)/4"
-                                style="margin-bottom: 10px;"> P = (3*B – 10*L)/4
+                            <input type="radio" id="Case 5 a" name="case_5_radio" value="S = F × (p/v) − 50w"
+                                style="margin-bottom: 10px;"> S = F × (p/v) − 50w  
                         </label><br>
                         <label for="Case_5_b" style="margin-bottom: 10px;"> <input type="radio" id="Case 5 b"
-                                name="case_3_radio" value="P = (2*B – 5*L)*0.5" style="margin-bottom: 10px;"> P = (2*B –
-                            5*L)*0.5 </label><br>
+                                name="case_5_radio" value="S = 0.7F − 100(p−1) + 100(v−1) − 50w  " style="margin-bottom: 10px;"> S = 0.7F − 100(p−1) + 100(v−1) − 50w  </label><br>
                         <label for="Case_5_c" style="margin-bottom: 10px;"><input type="radio" id="Case 5 c"
-                                name="case_3_radio" value="P = (3*B – 10*L)/2" style="margin-bottom: 10px;"> P = (3*B –
-                            10*L)/2</label><br>
+                                name="case_5_radio" value="S = 0.6F + 50v − 100p − 50w" style="margin-bottom: 10px;"> S = 0.6F + 50v − 100p − 50w</label><br>
                         <label for="Case_5_d" style="margin-bottom: 10px;"><input type="radio" id="Case 5 d"
-                                name="case_3_radio" value="P = (2*B – 5*L)*0.75" style="margin-bottom: 10px;"> P = (2*B
-                            –
-                            5*L)*0.75</label><br>
+                                name="case_5_radio" value="S = F − 200p + 200v − 50w" style="margin-bottom: 10px;"> S = F − 200p + 200v − 50w</label><br>
 
                     </radio>
 

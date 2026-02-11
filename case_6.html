@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6 Cases | Case 6</title>
-    <link rel="stylesheet" href="./style/case_7.css">
+    <link rel="stylesheet" href="./style/case_1.css">
     <link rel="stylesheet" href="./style/cases_general.css">
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -43,74 +43,51 @@
         </div>
         <!--main screen column-->
         <div class="main_screen column">
-            <div class="question_container">
-                <h1> Your NGO has compiled information regarding the population of
-                    different <br> types of racoons that live in the Ferrenghi Chain during Year
-                    1 to Year 5:</h1>
-                <br>
-                <table>
-                    <tr>
-                        <th style="width: 175px;"> Type (Population)</th>
-                        <th>Y1</th>
-                        <th>Y2</th>
-                        <th>Y3</th>
-                        <th>Y4</th>
-                        <th>Y5</th>
-                    </tr>
-                    <tr>
-                        <td style="width : 150px; text-align: left;" >Lotor</td>
-                        <td class="draggable" draggable="true">1,089</td>
-                        <td class="draggable" draggable="true">1,324</td>
-                        <td class="draggable" draggable="true">1,412</td>
-                        <td class="draggable" draggable="true">1,487</td>
-                        <td class="draggable" draggable="true">1,583</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">Minor</td>
-                        <td class="draggable" draggable="true">312</td>
-                        <td class="draggable" draggable="true">378</td>
-                        <td class="draggable" draggable="true">340</td>
-                        <td class="draggable" draggable="true">412</td>
-                        <td class="draggable" draggable="true">486</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">Simus</td>
-                        <td class="draggable" draggable="true">968</td>
-                        <td class="draggable" draggable="true">812</td>
-                        <td class="draggable" draggable="true">1,173</td>
-                        <td class="draggable" draggable="true">1,003</td>
-                        <td class="draggable" draggable="true">1,295</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;">Maynardi </td>
-                        <td class="draggable" draggable="true">2,301</td>
-                        <td class="draggable" draggable="true">2,845</td>
-                        <td class="draggable" draggable="true">3,390</td>
-                        <td class="draggable" draggable="true">3,102</td>
-                        <td class="draggable" draggable="true">2,931</td>
-                    </tr>
-                </table>
-                <br>
-                The average weight of a Simus racoon is <div class="draggable" draggable="true"
-                    style="display: inline;">18</div> kg, and the ratio of Lotor
-                : Minor : Simus : Maynardi racoon’s weight is <div class="draggable" draggable="true"
-                    style="display: inline;">7</div> : <div class="draggable" draggable="true" style="display: inline;">
-                    5</div> : <div class="draggable" draggable="true" style="display: inline;">9</div> : <div
-                    class="draggable" draggable="true" style="display: inline;">4</div> .<br><br>
-                <div id="question_title">Question</div>
-                <br>
+            <br>
+            <div class="question_container"> Researchers have been studying the territorial behavior of Arctic Foxes in
+                the Mistyvale Forest
+                Reserve. They have broken down the Reserve into quadrants and mapped out the Fox population
+                density (i.e., animals per quadrant) in the histogram below:
+            </div>
 
-                <p>What is the average weight per racoon in Year 3?<br>
-                </p>
-                <br>
-                <form>
-                    <label for="14.Case 6">Answer</label>
-                    <br>
-                    <br>
+            <br>
+            <div style="text-align: left; margin-left: 50px;">
+                <img src="./img/case6_chart.png" alt="cases_bar_chart"><br><br>
+            </div>
+            <div class="question_container" style="margin-right: 20px;">
+                <div id="the_question_title" style="font-weight: 500;">Question <br><br></div>
 
-                    <input class="input_answer" type="text" id="Case 6" min="0">
+                <p id="the_question">Please summarize the graph by identifying the mean, median, and mode of Foxes per
+                    quadrant.
 
-                </form>
+                </p><br>
+                <label for="Case 6 Mean">Mean =
+                    <select class="select_box" name="reach" id="Case 6 Mean" required>
+                        <option disabled selected value></option>
+                        <option value="<15"> &lt;15 </option>
+                        <option value="=15"> =15 </option>
+
+                        <option value="&gt;15">&gt;15</option>
+                    </select><br>
+                </label>
+
+                <label for="Case_6_Median" style="margin-bottom: 20px;"> Median = <select class="select_box" name="reach"
+                        id="Case 6 Median" required>
+                        <option disabled selected value></option>
+                        <option value="<15"> &lt;15 </option>
+                        <option value="=15"> =15 </option>
+
+                        <option value="&gt;15">&gt;15</option>
+                    </select><br></label>
+
+                <label for="Case_6_Mode" style="margin-bottom: 10px;"> Mode = <select class="select_box" name="reach"
+                        id="Case 6 Mode" required>
+                        <option disabled selected value></option>
+                        <option value="<15"> &lt;15 </option>
+                        <option value="=15"> =15 </option>
+
+                        <option value="&gt;15">&gt;15</option>
+                    </select></label>
 
             </div>
             <button class="end_btn" onclick="showConfirmBox()">Finish Study</button>
@@ -125,44 +102,11 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-    <div class="right_screen column">
-        <div class="container">
-            <div class="calculator">
-                <div class="display">
-                    <div id="historyDisplay" class="history-display"></div>
-                    <input type="text" id="inputField" lang="en">
-                    <hr id="sep_line">
-                    <div id="result" class="draggable" draggable="true"> 0 </div>
-
-                </div>
-                <div class="buttons">
-                    <button class="calculator-btn items" data-value="AC">AC</button>
-                    <button class="calculator-btn items" data-value="(">(</button>
-                    <button class="calculator-btn items" data-value=")">)</button>
-                    <button class="calculator-btn items" data-value="C">C</button>
-                    <button class="calculator-btn" data-value="7">7</button>
-                    <button class="calculator-btn" data-value="8">8</button>
-                    <button class="calculator-btn" data-value="9">9</button>
-                    <button class="calculator-btn items" data-value="/">/</button>
-                    <button class="calculator-btn" data-value="4">4</button>
-                    <button class="calculator-btn" data-value="5">5</button>
-                    <button class="calculator-btn" data-value="6">6</button>
-                    <button class="calculator-btn items" data-value="*">*</button>
-                    <button class="calculator-btn" data-value="1">1</button>
-                    <button class="calculator-btn" data-value="2">2</button>
-                    <button class="calculator-btn" data-value="3">3</button>
-                    <button class="calculator-btn items" data-value="-">-</button>
-                    <button class="calculator-btn" data-value="0">0</button>
-                    <button class="calculator-btn" data-value=".">.</button>
-                    <button class="calculator-btn" data-value="=">=</button>
-                    <button class="calculator-btn items" data-value="+">+</button>
-                </div>
-            </div>
-        </div>
-        <script src="./js/case_1.js"></script>
-        <script src="./js/cases.js"></script>
+    <script src="./js/calculator.js"></script>
+    <script src="./js/cases.js"></script>
 
 </body>
 
