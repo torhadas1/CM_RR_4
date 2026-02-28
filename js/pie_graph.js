@@ -191,7 +191,7 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ['Winter - Before', 'Winter - After', 'Winter - End', 'Spring - Before', 'Spring - After', 'Spring - End'],
+        labels: ['Add deer in Winter - Pop. before Winter', 'Add deer in Winter - Pop. after Winter', 'Add deer in Winter - Pop. end of Y1', 'Add deer in Spring - Pop. before Winter', 'Add deer in Spring - Pop. after Winter', 'Add deer in Spring - Pop. end of Y1'],
         datasets: [{
             data: [0, 0, 0, 0, 0, 0],  // Default values
             backgroundColor: [
@@ -218,7 +218,7 @@ var myChart = new Chart(ctx, {
         maintainAspectRatio: true,
         legend: {
             labels: {
-                fontSize: 20  // change this to whatever size you want
+                fontSize: 12  // change this to whatever size you want
             }
         }
     }

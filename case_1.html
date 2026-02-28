@@ -46,7 +46,8 @@
         <div class="main_screen column">
             <div class="question_container">
                 <h1>A research team has been studying the territory growth of Arctic Wolf packs in the Mistyvale Forest
-                    Reserve over several years. Below is a table documenting their territory over four years (in km2).
+                    Reserve over several years. Below is a table documenting their territory over four years (in
+                    km<sup>2</sup>).
                 </h1>
                 <br>
                 <table class="exhibit-table">
@@ -77,7 +78,7 @@
                             </td>
                             <td>
                                 <div class="draggable" id="exhibit2_draggable12"
-                                    data-title="Frostfang Wolf in Marshfield" data-value="461">461</div>
+                                    data-title="Frostfang Wolf in Marshfield" data-value="462">462</div>
                             </td>
                         </tr>
                         <tr>
@@ -157,14 +158,34 @@
 
                         <option value="Year 4">Year 4</option>
                     </select>
-                    increased by <input class="input_answer" style="width: 70px;" type="number" id="Case 1 Input">% from the previous 
-year.
+                    increased by <input class="input_answer" style="width: 70px;" type="number" id="Case 1 Input">% from
+                    the previous
+                    year.
 
                 </form>
                 <br>
                 <div><button class="end_btn" onclick="showConfirmBox()">Next Case</button></div>
             </div>
             <div class="container_main_screen">
+                <div id="tutorialPopup" style="
+  display:none;
+  position:absolute;
+  top:50px; left:95px; right:0; bottom:0;
+  background: rgba(0,0,0,0);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+">
+                    <div id="tutorialPopupBox">
+                        <div class="tutorial-title">Tutorial</div>
+                        <div class="tutorial-text">
+                            Please get ready for the next stage of the assessment.<br><br>
+                            You will have to answer a few cases to complete your research.
+                        </div>
+                        <button id="tutorialContinueBtn" class="tutorial-continue-btn">Continue</button>
+                    </div>
+                </div>
                 <div class="overlay" id="overlay" hidden>
                     <div class="confirm-box">
                         <h2 id="forward">Do you want to move to the next question?</h2><br>
@@ -215,24 +236,6 @@ year.
         <script src="./js/cases.js"></script>
 
 </body>
-<div id="tutorialPopup" style="
-  display:none;
-  position:absolute;
-  top:50px; left:0; right:0; bottom:0;
-  background: rgba(0,0,0,0);
-  z-index: 3000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-">
-    <div id="tutorialPopupBox">
-        <div class="tutorial-title">Tutorial</div>
-        <div class="tutorial-text">
-            Please get ready for the next stage of the assessment.<br><br>
-            You will have to answer a few cases to complete your research.
-        </div>
-        <button id="tutorialContinueBtn" class="tutorial-continue-btn">Continue</button>
-    </div>
-</div>
+
 
 </html>

@@ -25,10 +25,10 @@
                     <li class="item" id="invest">
                         <a href="#invest" class="btn_active">Investigation</a>
                         <div class="smenu">
-                            <a href="#objective" class="target">Objective</a>
+                            <a href="#objectivex" class="target">Objective</a>
+                            <a href="#study">Study</a>
                             <a href="#first_exhibit" class="target">Exhibit 1</a>
                             <a href="#second_exhibit" class="target">Exhibit 2</a>
-                            <a href="#study">Study</a>
                         </div>
                     </li>
                     <li class="item" id="analysis">
@@ -57,7 +57,6 @@
                 </div>
 
                 <div id="objective" class=container>
-
                     <div id="research_info_title" class=container>Research Information</div><br>
                     <div class="the_main_text">You are a conservationist assigned to the Mistyvale Forest Reserve, once
                         famed for its Fallow Deer
@@ -70,6 +69,7 @@
                     <div class="the_main_text">To restore the deer population, your team plans to introduce new female
                         deer from other regions.</div>
                     <br>
+                    <div id="objectivex" class=container>Objective</div><br>
                     <div class="draggable" id="objective_line" data-title="Objective">Determine the best time to
                         introduce the new female Fallow Deer to the Highwood and Redwood
                         sub-areas to maximize herd population after a year.
@@ -101,8 +101,7 @@
                             Add 60 female deer to each sub-area right as spring starts (Month 4) to avoid death during
                             winter
                             months, but reduced bonding time.
-                        </div><br><br><br>
-
+                        </div><br><br>
                         The following represents the expected mortality of Fallow Deer due to the harsh winter:
                     </div>
                 </div>
@@ -128,16 +127,14 @@
                                 <td>2</td>
                                 <td>
                                     <div class="draggable" id="exhibit_draggable4"
-                                        data-title="Mortality during winter month 2" data-value="1 out of 10">1 out of
-                                        10</div>
+                                        data-title="Mortality during winter month 2" data-value="1 out of 10">1 out of 10</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>
                                     <div class="draggable" id="exhibit_draggable6"
-                                        data-title="Mortality during winter month 3" data-value="1 out of 10">1 out of
-                                        10</div>
+                                        data-title="Mortality during winter month 3" data-value="1 out of 10">1 out of 10</div>
                                 </td>
                             </tr>
                         </tbody>
@@ -157,12 +154,14 @@
                     winter months, this <div class="draggable study_drag" draggable="true" id="winter_kill_rate"
                         data-title="Change in Frostfang Wolf kill rate during winter">increases by 50%</div>. Male and
                     female Fallow Deer are <div class="draggable study_drag" draggable="true" id="hunting_habits"
-                        data-title="Frostfang Wolf hunting habits by gender of Fallow Deer">hunted proportionately</div> by
-                        the Frostfang Wolves.<br><br>
+                        data-title="Frostfang Wolf hunting habits by gender of Fallow Deer">hunted proportionately</div>
+                    by
+                    the Frostfang Wolves.<br><br>
 
                     Assume that there are <div class="draggable study_drag" draggable="true" id="other_factors"
-                        data-title="Other factors impacting Fallow Deer population">no other expected causes of death</div>
-                        beyond those outlined above.<br><br><br>
+                        data-title="Other factors impacting Fallow Deer population">no other expected causes of death
+                    </div>
+                    beyond those outlined above.<br><br>
 
                     Field teams have surveyed each sub-area in Mistyvale to provide the following snapshot on Fallow
                     Deer and Frostfang Wolf populations:
@@ -244,8 +243,8 @@
                 </div>
                 <div class="container study-text">
                     <br>
-                    Fallow Deer <div class="draggable study_drag" draggable="true"
-                        id="breeding_period" data-title="Fallow Deer peak breeding period">typically breed in mid spring (Months 5)</div>,
+                    Fallow Deer <div class="draggable study_drag" draggable="true" id="breeding_period"
+                        data-title="Fallow Deer peak breeding period">typically breed in mid spring (Months 5)</div>,
                     with a gestation period of about <div class="draggable study_drag" draggable="true" id="gestation"
                         data-title="Fallow Deer gestation period">four months</div>.
                     The fawn (baby deer) is not expected to have higher mortality than adults due to Frostfang
@@ -254,12 +253,11 @@
                     If the additional Fallow Deer were added during Winter, then <div class="draggable study_drag"
                         draggable="true" id="breeding_rate_option1" data-title="Breeding rate under Option 1">80% of all
                         surviving adult females</div> (both
-                        existing and new) will breed. If bonding was limited, only <div
-                        class="draggable study_drag" draggable="true" id="breeding_rate_option2"
-                        data-title="Breeding rate under Option 2">20% of all surviving adult females</div> (both
-                        existing and new) will breed. Each successful breeding results in <div
-                        class="draggable study_drag" draggable="true" data-title="Outcome of breeding"
-                        id="breeding_outcome">1 fawn</div>.
+                    existing and new) will breed. If bonding was limited, only <div class="draggable study_drag"
+                        draggable="true" id="breeding_rate_option2" data-title="Breeding rate under Option 2">20% of all
+                        surviving adult females</div> (both
+                    existing and new) will breed. Each successful breeding results in <div class="draggable study_drag"
+                        draggable="true" data-title="Outcome of breeding" id="breeding_outcome">1 fawn</div>.
 
                     <br><br>
 

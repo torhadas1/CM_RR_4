@@ -29,7 +29,8 @@
 }
 
 #research_info_title,
-#study {
+#study,
+#objectivex {
     font-weight: bold;
 }
 
@@ -330,12 +331,10 @@
 
 #first_exhibit {
     margin-left: 50px;
-    margin-bottom: 50px;
 }
 
 #second_exhibit {
     margin-left: 50px;
-    margin-bottom: 50px;
 }
 
 .island {
@@ -367,7 +366,6 @@
 .island .afterDrag {
     position: absolute;
     text-align: center;
-    font-size: 20px;
     font-weight: bold;
     top: 10%;
     left: 41%;
@@ -382,7 +380,7 @@
     position: absolute;
     text-align: center;
     padding-top: 2px;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     /* top: 10%;
     left: 41%; */
@@ -393,212 +391,12 @@
 
     /* Add other styles as needed */
 }
-
-.island #exhibit_draggable1 {
-    top: 22.5%;
-    left: 18.7%;
-    width: 41px;
-    height: 24px;
-    font-size: 16px;
-}
-
-.island #exhibit_draggable2 {
-    top: 22.6%;
-    left: 31.2%;
-    width: 41px;
-    height: 24px;
-    font-size: 16px;
-
-}
-
-.island #exhibit_draggable3 {
-    top: 31.2%;
-    left: 54.4%;
-    width: 41px;
-    height: 24px;
-    font-size: 16px;
-
-}
-
-.island #exhibit_draggable4 {
-    top: 31%;
-    left: 66.8%;
-    width: 41px;
-    height: 24px;
-    font-size: 16px;
-
-}
-
-.island #exhibit_draggable5 {
-    top: 40.3%;
-    left: 12.3%;
-    width: 41px;
-    height: 24px;
-    font-size: 16px;
-}
-
-.island #exhibit_draggable6 {
-    top: 40.5%;
-    left: 24.6%;
-    width: 41px;
-    height: 24px;
-    font-size: 16px;
-}
-
-.island #exhibit_draggable7 {
-    top: 57.2%;
-    left: 25.9%;
-    width: 41px;
-    height: 24px;
-    font-size: 16px;
-}
-
-.island #exhibit_draggable8 {
-    top: 57.3%;
-    left: 38.2%;
-    width: 41px;
-    height: 24px;
-    font-size: 16px;
-}
-
-.chart #exhibit2_draggable1 {
-    top: 31.4%;
-    left: 38.5%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-    vertical-align: middle;
-}
-
-.chart #exhibit2_draggable2 {
-    top: 31.4%;
-    left: 55.9%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-    text-align-last: center;
-
-}
-
-.chart #exhibit2_draggable3 {
-    top: 31.4%;
-    left: 73.3%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable4 {
-    top: 31.4%;
-    left: 90.7%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable5 {
-    top: 49.6%;
-    left: 38.5%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable6 {
-    top: 49.6%;
-    left: 55.9%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable7 {
-    top: 49.6%;
-    left: 73.3%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable8 {
-    top: 49.6%;
-    left: 90.7%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable9 {
-    top: 67.8%;
-    left: 38.5%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable10 {
-    top: 67.8%;
-    left: 55.9%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable11 {
-    top: 67.8%;
-    left: 73.3%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable12 {
-    top: 67.8%;
-    left: 90.7%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable13 {
-    top: 86%;
-    left: 38.5%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable14 {
-    top: 86%;
-    left: 55.9%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable15 {
-    top: 86%;
-    left: 73.3%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
-.chart #exhibit2_draggable16 {
-    top: 86%;
-    left: 90.7%;
-    font-size: 18px;
-    height: 33px;
-    width: 62px;
-}
-
 .right_screen #second_exhibit {
     height: 100vh;
     margin-left: 50px;
 }
 
 #study {
-    height: 100vh;
     margin-left: 50px;
 }
 
@@ -837,13 +635,13 @@
     padding: 10px;
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .exhibit-table td {
     padding: 3px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
     border: 1px solid #dddddd;
     color: var(--capiton);
 }

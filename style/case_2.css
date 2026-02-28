@@ -188,7 +188,7 @@ td,
 th {
   border: 1px solid #dddddd;
   padding: 3px;
-  font-size: 18px;
+  font-size: 22px;
   text-align: center;
 }
 
@@ -311,13 +311,13 @@ label {
     padding: 10px;
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .exhibit-table td {
     padding: 3px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
     border: 1px solid #dddddd;
     color: var(--capiton);
 }

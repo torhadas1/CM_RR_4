@@ -499,13 +499,13 @@ font-size: 24px;  color: #fff;
     padding: 10px;
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .exhibit-table td {
     padding: 3px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
     border: 1px solid #dddddd;
     color: var(--capiton);
 }

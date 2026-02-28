@@ -336,7 +336,7 @@ function setupExpandableItems($items) {
 
     $box.find('.expand-arrow').remove(); // Prevent duplicates
 
-    if ($text.text().trim().length > 25) {
+    if ($text.text().trim().length > 21) {
       if (isExpanded) {
         // Add expand arrow only if not already expanded
         const $arrow = $('<button type="button" class="expand-arrow expanded">&#x25BC;</button>');

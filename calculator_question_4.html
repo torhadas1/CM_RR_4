@@ -55,7 +55,7 @@
                     <br>
                     <button onclick="isConfirm(false)" class="confirm_btn">Back to the question</button>
                     <button
-                        onclick="localStorage.setItem('calculator_state','review'); location.href='calculator_review.html'; SaveToLocalStorage();"
+                        onclick="localStorage.setItem('calculator_state','review'); location.href='calculator_review.html'; moveToNextQuestion();"
                         class="confirm_btn">Move to
                         review</button>
                 </div>
@@ -69,15 +69,14 @@
                     <br>
                     What is the percentage change in total Fallow Deer population across the Highwood and Redwood sub-areas after 1 year under both proposals? Please round your answer to the closest 1 decimal point.
                     <div class="input_box">
-                        <br>
                         <label for="first_answer_forest" style="display: inline;">Add deer during winter
-                        </label><br>
+                        </label><br><br>
                         <input type="text" style="display: inline;" class="input_answer" id="4. Question 4 Add deer during winter"
                             name=" Change in total population if deer 
 added during winter" min="0"> %
                         <br><br>
                         <label for="first_answer_lagoon" style="display: inline;">Add deer during spring
-                        </label>
+                        </label><br><br>
                         <input type="text" style="display: inline;" class="input_answer" id="4. Question 4 Add deer during spring"
                             name=" Change in total population if deer 
 added during spring" min="0"> %
