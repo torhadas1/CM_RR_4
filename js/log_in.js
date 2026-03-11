@@ -6,7 +6,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 
     // You would replace this with your actual login logic.
     // This example just checks if the username and password are both "admin".
-    if (username === 'CaseMentor7490' && password === 'PSG-SIM-g7JETp9') {
+    if (username === 'YouInConsulting' && password === 'YouInConsulting') {
         localStorage.setItem('isLoggedIn', 'true');  // Set isLoggedIn to true in local storage
         window.location.href = 'index.html';
     } else {
@@ -15,3 +15,4 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
         document.getElementById('login-error').textContent = 'Invalid username or password.';
     }
 });
+
